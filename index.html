@@ -14,7 +14,9 @@
   <link rel="shortcut icon" href="assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap"></noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/modern.css">
@@ -801,11 +803,11 @@
     var current = 0, target = 0, finished = false;
     function animFill() {
       if (finished) return;
-      if (current < target) { current = Math.min(current + 0.9, target); var v = Math.round(current); fill.style.width = v+'%'; pct.textContent = v+'%'; if (prog) prog.setAttribute('aria-valuenow', v); }
+      if (current < target) { current = Math.min(current + 1.8, target); var v = Math.round(current); fill.style.width = v+'%'; pct.textContent = v+'%'; if (prog) prog.setAttribute('aria-valuenow', v); }
       requestAnimationFrame(animFill);
     }
     requestAnimationFrame(animFill);
-    [{to:15,d:0},{to:35,d:100},{to:55,d:250},{to:72,d:450},{to:88,d:650},{to:95,d:800}].forEach(function(s){ setTimeout(function(){ target=s.to; }, s.d); });
+    [{to:25,d:0},{to:50,d:80},{to:70,d:180},{to:85,d:280},{to:95,d:360}].forEach(function(s){ setTimeout(function(){ target=s.to; }, s.d); });
     function finish() {
       if (finished) return; finished = true; target = current = 100;
       fill.style.width = '100%'; pct.textContent = '100%';
@@ -813,12 +815,12 @@
         loader.classList.add('loader-hidden');
         document.body.style.overflow = '';
         loader.addEventListener('transitionend', function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, {once:true});
-      }, 280);
+      }, 180);
     }
-    var minT = Date.now() + 800;
+    var minT = Date.now() + 400;
     if (document.readyState === 'complete') setTimeout(finish, Math.max(0, minT - Date.now()));
     else window.addEventListener('load', function(){ setTimeout(finish, Math.max(0, minT - Date.now())); });
-    setTimeout(finish, 2500);
+    setTimeout(finish, 1200);
   }
 
   // ── Theme Toggle ─────────────────────────────────────────────

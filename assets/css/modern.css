@@ -1510,7 +1510,7 @@ img { max-width: 100%; height: auto; display: block; }
   position: fixed; inset: 0; z-index: 99999;
   display: flex; align-items: center; justify-content: center;
   background: linear-gradient(135deg, #0a0820 0%, #0f0c29 20%, #1e1b6b 50%, #3730a3 75%, #5b21b6 100%);
-  transition: opacity 0.75s ease, visibility 0.75s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
   overflow: hidden;
 }
 #lci-loader.loader-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -1873,41 +1873,173 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ── Responsive ──────────────────────────────────────────────── */
+/* ── Responsive ──────────────────────────────────────────────── */
+
+/* Tablet (≤1024px) */
 @media (max-width: 1024px) {
   .lci-footer-grid    { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
   .lci-grid-4         { grid-template-columns: repeat(2,1fr); }
   .social-cta-grid    { grid-template-columns: repeat(2,1fr); }
   .video-grid         { grid-template-columns: repeat(2,1fr); }
-}
-
-@media (max-width: 768px) {
-  :root { --header-height: 64px; --space-20: 3.5rem; --space-32: 5rem; }
-  .lci-nav, .lci-btn-give { display: none; }
-  .lci-menu-toggle  { display: flex; }
-  .lci-mobile-nav   { display: block; }
-  .lci-logo-name    { font-size: var(--text-base); }
-  .lci-footer-grid  { grid-template-columns: 1fr; gap: var(--space-8); }
-  .lci-grid-2, .lci-grid-3, .lci-grid-4 { grid-template-columns: 1fr; }
-  .lci-stats-grid   { grid-template-columns: repeat(2,1fr); }
-  .about-intro-wrap, .giving-inner, .two-col { grid-template-columns: 1fr; gap: var(--space-8); }
-  .vision-strip-grid, .three-col { grid-template-columns: 1fr; }
-  .audio-grid       { grid-template-columns: 1fr; }
-  .social-cta-grid  { grid-template-columns: repeat(2,1fr); }
-  .video-grid       { grid-template-columns: 1fr; }
-  .lci-hero-actions, .lci-slide-actions { flex-direction: column; }
-  .lci-newsletter-form { flex-direction: column; }
-  .lci-footer-bottom { flex-direction: column; text-align: center; }
-  .service-strip-inner { gap: var(--space-5); }
-  .media-tabs { overflow-x: auto; flex-wrap: nowrap; }
-  .pastor-profile, .pastor-profile.reverse { grid-template-columns: 1fr; }
+  /* Pastor layout collapses earlier than 768 */
+  .pastor-profile,
+  .pastor-profile.reverse { grid-template-columns: 1fr; }
   .pastor-profile.reverse .pastor-img-col { order: 1; }
   .pastor-profile.reverse .pastor-text-col { order: 2; }
   .pastor-img-col { position: static; }
-  .pastor-photo-wrap img { aspect-ratio: 4/3; }
+  /* About / giving grids */
+  .about-intro-wrap   { grid-template-columns: 1fr; gap: var(--space-8); }
+  .giving-inner       { grid-template-columns: 1fr; gap: var(--space-8); }
 }
 
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+    --space-20: 3rem;
+    --space-32: 4.5rem;
+    --space-16: 3rem;
+  }
+
+  /* ── Header & Nav ── */
+  .lci-nav, .lci-btn-give { display: none; }
+  .lci-menu-toggle  { display: flex; }
+  .lci-mobile-nav   { display: block; }
+  .lci-logo-name    { font-size: var(--text-sm); }
+  .lci-logo-tagline { display: none; }           /* prevent logo overflow */
+  .lci-header-inner { padding: 0 var(--space-4); }
+
+  /* ── Container ── */
+  .lci-container    { padding: 0 var(--space-4); }
+
+  /* ── Footer ── */
+  .lci-footer-grid  { grid-template-columns: 1fr; gap: var(--space-8); }
+  .lci-footer-bottom { flex-direction: column; text-align: center; }
+
+  /* ── Generic grids → single column ── */
+  .lci-grid-2,
+  .lci-grid-3,
+  .lci-grid-4       { grid-template-columns: 1fr; }
+  .two-col,
+  .three-col        { grid-template-columns: 1fr; gap: var(--space-6); }
+  .lci-stats-grid   { grid-template-columns: repeat(2,1fr); gap: var(--space-4); }
+
+  /* ── Audio / Video / Social ── */
+  .audio-grid       { grid-template-columns: 1fr; }
+  .social-cta-grid  { grid-template-columns: repeat(2,1fr); }
+  .video-grid       { grid-template-columns: 1fr; }
+
+  /* ── About / Vision / Giving ── */
+  .vision-strip-grid { grid-template-columns: 1fr; }
+  .about-intro-wrap,
+  .giving-inner      { grid-template-columns: 1fr; gap: var(--space-6); }
+
+  /* ── Hero slider ── */
+  .lci-slider        { min-height: 480px; }
+  .lci-slide-title   { font-size: clamp(var(--text-2xl), 7vw, var(--text-4xl)); }
+  .lci-slide-verse   { font-size: var(--text-base); }
+  .lci-slide-actions { flex-direction: column; gap: var(--space-3); }
+  .lci-slide-actions .lci-btn { width: 100%; justify-content: center; }
+  .lci-slider-controls { bottom: var(--space-6); }
+
+  /* ── Page hero ── */
+  .lci-page-hero { padding: var(--space-16) var(--space-4) var(--space-10); min-height: 260px; }
+  .lci-page-hero-title { font-size: clamp(var(--text-2xl), 7vw, var(--text-4xl)); }
+  .lci-page-hero-subtitle { font-size: var(--text-base); }
+  .hero-stats-row   { gap: var(--space-2); }
+  .hero-stat-pill   { font-size: var(--text-xs); padding: var(--space-1) var(--space-3); }
+
+  /* ── Section headers ── */
+  .lci-section-title { font-size: clamp(var(--text-2xl), 6vw, var(--text-3xl)); }
+  .lci-section-subtitle { font-size: var(--text-base); }
+
+  /* ── Buttons ── */
+  .lci-btn-lg       { padding: var(--space-3) var(--space-6); font-size: var(--text-base); }
+
+  /* ── Forms ── */
+  .lci-newsletter-form { flex-direction: column; }
+
+  /* ── Service strip ── */
+  .service-strip-inner { gap: var(--space-4); justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+
+  /* ── Media tabs ── */
+  .media-tabs { overflow-x: auto; flex-wrap: nowrap; padding: var(--space-3) var(--space-4); }
+  .media-tab-btn { font-size: var(--text-xs); padding: var(--space-2) var(--space-3); }
+
+  /* ── Pastor pages ── */
+  .pastor-photo-wrap img { aspect-ratio: 4/3; }
+  .pastor-name-large { font-size: var(--text-2xl); }
+  .pastor-bio-intro  { font-size: var(--text-base); }
+
+  /* ── Programs grid ── */
+  .programs-grid    { grid-template-columns: 1fr; }
+
+  /* ── Contact page ── */
+  .contact-info-grid  { grid-template-columns: 1fr; }
+  .contact-main-grid  { grid-template-columns: 1fr; }
+  .form-row           { grid-template-columns: 1fr; }
+  .social-connect-grid { grid-template-columns: 1fr; }
+  .branches-grid      { grid-template-columns: 1fr; }
+
+  /* ── Impact strip ── */
+  .impact-strip       { grid-template-columns: 1fr 1fr; }
+  .impact-number      { font-size: var(--text-3xl); }
+
+  /* ── Back to top ── */
+  .lci-back-top { bottom: var(--space-5); right: var(--space-5); width: 44px; height: 44px; }
+
+  /* ── Giving section on contact ── */
+  .giving-section > .lci-container > div,
+  .giving-quote     { padding: var(--space-6); }
+
+  /* ── Vision strip ── */
+  .vision-item      { padding: var(--space-6); }
+
+  /* ── Cards ── */
+  .lci-ministry-card { padding: var(--space-6); }
+  .lci-stat-item    { padding: var(--space-5); }
+}
+
+/* Extra-small (≤480px) */
 @media (max-width: 480px) {
-  .lci-stats-grid { grid-template-columns: 1fr 1fr; }
+  :root {
+    --space-20: 2.5rem;
+    --space-16: 2rem;
+  }
+
+  .lci-stats-grid   { grid-template-columns: 1fr 1fr; }
+  .social-cta-grid  { grid-template-columns: 1fr 1fr; }
+
+  /* Slider controls smaller */
+  .lci-slider-prev, .lci-slider-next { width: 36px; height: 36px; font-size: var(--text-sm); }
+  .lci-slider-dot   { width: 6px; height: 6px; }
+  .lci-slider-dot.active { width: 18px; }
+
+  /* Logo on very small screens */
+  .lci-logo-img     { height: 36px; }
+
+  /* Section padding reduction */
+  .lci-section      { padding: var(--space-12) 0; }
+  .lci-section-sm   { padding: var(--space-8) 0; }
+
+  /* Footer grid stacked */
+  .lci-footer-grid  { grid-template-columns: 1fr; }
+
+  /* Impact strip single column on tiny screens */
+  .impact-strip     { grid-template-columns: 1fr; }
+
+  /* Hide hero watermark cross on tiny screens */
+  .hero-cross-watermark { display: none; }
+
+  /* Programs card full-width buttons */
+  .prog-card-body .lci-btn { width: 100%; justify-content: center; }
+
+  /* Branch cards */
+  .branch-card      { padding: var(--space-5); }
+
+  /* Carousel nav inside container on tiny screens */
+  .lci-carousel-nav-prev { left: var(--space-1); }
+  .lci-carousel-nav-next { right: var(--space-1); }
 }
 
 /* ── Accessibility ───────────────────────────────────────────── */
