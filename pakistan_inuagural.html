@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pakistan Inaugural Worship Service — Leaders' Church International. Photo gallery from the kick-off of LCI in Pakistan, featuring a book launch and inaugural fellowship.">
+  <title>Pakistan Inaugural Worship Service — Leaders' Church International</title>
+
+  <link rel="shortcut icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="assets/css/modern.css">
+
+  <style>
+    /* Gallery grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-3);
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base);
+      border: 2px solid transparent;
+      display: block;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--color-accent);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+      display: block;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(45,0,70,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+    }
+
+    .gallery-item-overlay i {
+      color: white;
+      font-size: var(--text-2xl);
+      opacity: 0;
+      transition: all var(--transition-fast);
+      transform: scale(0.7);
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      background: rgba(45,0,70,0.45);
+    }
+
+    .gallery-item:hover .gallery-item-overlay i {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @media (max-width: 1100px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 900px)  { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 600px)  { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 400px)  { .gallery-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="lci-skip-link">Skip to main content</a>
+
+<!-- ── HEADER ─────────────────────────────────────────────────── -->
+<header class="lci-header" id="lci-header">
+  <div class="lci-header-inner">
+    <a href="index.html" class="lci-logo" aria-label="Leaders' Church International — Home">
+      <img src="assets/images/lci-logo.svg" alt="LCI Logo" class="lci-logo-img">
+      <div class="lci-logo-text">
+        <span class="lci-logo-name">Leaders' Church International</span>
+        <span class="lci-logo-tagline">Citadel of Peace &amp; Righteousness</span>
+      </div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="lci-nav" role="list">
+        <li><a href="index.html"    class="lci-nav-link">Home</a></li>
+        <li><a href="about.html"    class="lci-nav-link">About</a></li>
+        <li><a href="pastors.html"  class="lci-nav-link">Pastors</a></li>
+        <li><a href="media.html"    class="lci-nav-link">Media</a></li>
+        <li><a href="programs.html" class="lci-nav-link active">Programs</a></li>
+        <li><a href="contact.html"  class="lci-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lci-header-actions">
+      <button class="lci-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></button>
+      <a href="contact.html#give" class="lci-btn-give"><i class="fas fa-heart"></i> Give Online</a>
+      <button class="lci-menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="lci-mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+  <ul class="lci-mobile-nav-list" role="list">
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="about.html">📖 About LCI</a></li>
+    <li><a href="pastors.html">✝ Pastors' Corner</a></li>
+    <li><a href="media.html">🎵 Media</a></li>
+    <li><a href="programs.html" class="active">📋 Programs</a></li>
+    <li><a href="contact.html">📍 Contact</a></li>
+  </ul>
+  <div class="lci-mobile-actions">
+    <a href="contact.html#give" class="lci-btn lci-btn-gold lci-btn-lg"><i class="fas fa-heart"></i> Give Online</a>
+  </div>
+</nav>
+
+<main id="main-content" class="lci-page-body">
+
+  <!-- ── PAGE HERO ──────────────────────────────────────────────── -->
+  <section class="lci-page-hero">
+    <div class="lci-container" style="position: relative; z-index: 1;">
+      <h1 class="lci-page-hero-title">Pakistan Inaugural Worship Service</h1>
+      <p class="lci-page-hero-subtitle">The Kick-off of Leaders' Church International in Pakistan — Book Launch, Inaugural Worship &amp; Fellowship</p>
+      <nav class="lci-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="lci-breadcrumb-sep" aria-hidden="true">/</span>
+        <a href="programs.html">Programs</a>
+        <span class="lci-breadcrumb-sep" aria-hidden="true">/</span>
+        <span aria-current="page">Pakistan Inaugural</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ── GALLERY ─────────────────────────────────────────────────── -->
+  <section class="lci-section lci-section-gray" aria-labelledby="gallery-heading">
+    <div class="lci-container">
+      <div class="lci-section-header lci-reveal">
+        <span class="lci-section-eyebrow">Photo Gallery</span>
+        <h2 class="lci-section-title" id="gallery-heading">35 Moments of Kingdom History</h2>
+        <p class="lci-section-subtitle">Click any photo to view it in full screen. Swipe or use arrow keys to navigate between photos.</p>
+      </div>
+
+      <div id="gallery-container" class="gallery-grid" role="list" aria-label="Pakistan Inaugural Worship Service photo gallery">
+        <!-- Populated by JavaScript -->
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-8);">
+        <a href="programs.html" class="lci-btn lci-btn-outline lci-btn-lg lci-reveal">
+          <i class="fas fa-arrow-left"></i> Back to All Programs
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer class="lci-footer">
+  <div class="lci-container">
+    <div class="lci-footer-grid">
+      <div class="lci-footer-brand">
+        <a href="index.html" class="lci-footer-logo">
+          <img src="assets/images/lci-logo.svg" alt="LCI Logo" class="lci-footer-logo-img">
+          <div class="lci-footer-logo-text">
+            <span class="name">Leaders' Church International</span>
+            <span class="tagline">Citadel of Peace &amp; Righteousness</span>
+          </div>
+        </a>
+        <p class="lci-footer-desc">A multi-ethnic, globally-diverse church community built on faith, purpose, and the enduring love of Christ.</p>
+        <div class="lci-social-links">
+          <a href="https://web.facebook.com/Leaders-Church-International-101252804654265/" target="_blank" rel="noopener" class="lci-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/israeleledan" target="_blank" rel="noopener" class="lci-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/israel_eledan" target="_blank" rel="noopener" class="lci-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com/channel/UC1tdE0iSOtPHIXh1OzLOnyA" target="_blank" rel="noopener" class="lci-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div><h3 class="lci-footer-heading">Quick Links</h3><ul class="lci-footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About LCI</a></li><li><a href="pastors.html">Pastors' Corner</a></li><li><a href="media.html">Media</a></li><li><a href="programs.html">Programs</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h3 class="lci-footer-heading">Programs</h3><ul class="lci-footer-links"><li><a href="good_samaritan_outreach.html">Good Samaritan Outreach</a></li><li><a href="pakistan_inuagural.html">Pakistan Inaugural Service</a></li><li><a href="about.html#ministries">All Ministries</a></li></ul></div>
+      <div><h3 class="lci-footer-heading">Contact</h3><div class="lci-footer-contact-item"><span class="lci-footer-contact-icon"><i class="fas fa-envelope"></i></span><a href="mailto:contact@leaderschurchinternational.org" style="color: var(--color-accent-light); text-decoration: none;">contact@leaderschurchinternational.org</a></div></div>
+    </div>
+    <hr class="lci-footer-divider">
+    <div class="lci-footer-bottom">
+      <p class="lci-footer-copyright">&copy; 2026 <a href="index.html">Leaders' Church International</a>. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="lci-back-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></a>
+
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+(function() {
+  // Theme
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon   = document.getElementById('themeIcon');
+  const savedTheme  = localStorage.getItem('lci-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  themeToggle.addEventListener('click', function() {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('lci-theme', next);
+    themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  });
+
+  const header = document.getElementById('lci-header');
+  window.addEventListener('scroll', function() { header.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav  = document.getElementById('mobileNav');
+  menuToggle.addEventListener('click', function() {
+    const isOpen = mobileNav.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileNav.setAttribute('aria-hidden', String(!isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileNav.classList.remove('open'); menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false'); mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+
+  const backTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() { backTop.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
+  backTop.addEventListener('click', function(e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  // Build gallery
+  const images = [
+    'content/gallery/piws.jpeg','content/gallery/piws1.jpeg','content/gallery/piws2.jpeg',
+    'content/gallery/piws3.jpeg','content/gallery/piws4.jpeg','content/gallery/piws5.jpeg',
+    'content/gallery/piws6.jpeg','content/gallery/piws7.jpeg','content/gallery/piws8.jpeg',
+    'content/gallery/piws9.jpeg','content/gallery/piws10.jpeg','content/gallery/piws11.jpeg',
+    'content/gallery/piws12.jpeg','content/gallery/piws13.jpeg','content/gallery/piws14.jpeg',
+    'content/gallery/piws15.jpeg','content/gallery/piws16.jpeg','content/gallery/piws17.jpeg',
+    'content/gallery/piws18.jpeg','content/gallery/piws19.jpeg','content/gallery/piws20.jpeg',
+    'content/gallery/piws21.jpeg','content/gallery/piws22.jpeg','content/gallery/piws23.jpeg',
+    'content/gallery/piws24.jpeg','content/gallery/piws25.jpeg','content/gallery/piws26.jpeg',
+    'content/gallery/piws27.jpeg','content/gallery/piws28.jpeg','content/gallery/piws29.jpeg',
+    'content/gallery/piws30.jpeg','content/gallery/piws31.jpeg','content/gallery/piws32.jpeg',
+    'content/gallery/piws33.jpeg','content/gallery/piws34.jpeg'
+  ];
+
+  const container = document.getElementById('gallery-container');
+
+  images.forEach(function(src, i) {
+    const a = document.createElement('a');
+    a.href = src;
+    a.className = 'gallery-item glightbox';
+    a.setAttribute('data-gallery', 'pakistan');
+    a.setAttribute('data-description', 'Pakistan Inaugural Worship Service — Photo ' + (i + 1) + ' of ' + images.length);
+    a.setAttribute('role', 'listitem');
+    a.setAttribute('aria-label', 'Pakistan Inaugural photo ' + (i + 1));
+
+    const img = document.createElement('img');
+    img.src = src;
+    img.loading = 'lazy';
+    img.alt = 'Pakistan Inaugural Worship Service — photo ' + (i + 1);
+
+    const overlay = document.createElement('div');
+    overlay.className = 'gallery-item-overlay';
+    overlay.innerHTML = '<i class="fas fa-search-plus" aria-hidden="true"></i>';
+
+    a.appendChild(img);
+    a.appendChild(overlay);
+    container.appendChild(a);
+  });
+
+  // Init GLightbox
+  GLightbox({
+    touchNavigation: true,
+    loop: true,
+    zoomable: true,
+    draggable: true
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.lci-reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(el) { io.observe(el); });
+  } else { reveals.forEach(function(el) { el.classList.add('revealed'); }); }
+})();
+</script>
+</body>
+</html>

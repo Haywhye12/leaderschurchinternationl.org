@@ -1,0 +1,432 @@
+body .content-wrapper {
+	background: #f6f6ed;
+}
+
+a:hover, a:focus {
+	color: #3e9b04;
+}
+a.h1:hover, a.h2:hover, a.h3:hover, a.h4:hover, a.h5:hover, a.h6:hover {
+	color: #3e9b04;
+}
+abbr {
+	color: #3e9b04;
+}
+mark {
+	background-color: #3e9b04;
+}
+mark.light {
+	background-color: #3e9b04;
+}
+abbr[title], abbr[data-original-title] {
+	border-bottom: 1px dotted #3e9b04;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[1.1]	COMMON LIST STYLE - UL common classes
+/ -------------------------------------------------------------------------------- */
+ul.toggle > li > a:hover {
+	color: #3e9b04;
+}
+ul.list-fqa > li > a:hover:before {
+	color: #3e9b04;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[2]	COMMON CLASS
+/ -------------------------------------------------------------------------------- */
+.text-primary {
+	color: #3e9b04;
+}
+.title-primary:after {
+	background-color: #3e9b04;
+}
+
+.avatar-circle {
+	border: 10px solid #3e9b04;
+}
+
+.by-author a:hover {
+	color: #3e9b04;
+}
+
+.badge-circle {
+	background-color: #3e9b04;
+}
+.border-top {
+	border-top: 2px solid #3e9b04;
+}
+.border-top {
+	border-top-color: #3e9b04;
+}
+
+
+.overlay-inner .glyphicon, .overlay-hover .glyphicon {
+	background-color: #3e9b04;
+}
+
+.thumbnail:hover .overlay-hover {
+	border-color: #3e9b04;
+}
+.thumbnail:hover .border-inner {
+	border-color: #3e9b04;
+}
+.thumbnail .caption:before {
+	background-color: #3e9b04;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[3]	RESET BOOTSTRAP CLASS
+/ -------------------------------------------------------------------------------- */
+.btn-default {
+	background-color: #3e9b04;
+	border-color: #3e9b04;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+	background-color: #3e9b04;
+	border-color: #3e9b04;
+}
+.btn-up {
+	background-color: #3e9b04;
+}
+.input-group .btn.input-addon:hover {
+	background-color: #3e9b04;
+}
+.input-group .form-control:focus + .btn.input-addon:hover {
+	border-color: #3e9b04;
+}
+.form-control:focus {
+	border: 1px solid #3e9b04;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[4]	SHORTCODES
+/ -------------------------------------------------------------------------------- */
+/* dropcap */
+.dropcap {
+	color: #3e9b04;
+}
+/* progress bar */
+.progress .progress-bar {
+	background-color: #3e9b04;
+	color: #3e9b04;
+}
+.progress-overall .progress-rotate {
+	background-color: #3e9b04;
+}
+.progress-overall .progress-overall-content {
+	background-color: #f6f5f2;
+}
+
+/* tabs */
+.tabs-wrapper .nav-tabs > li.active > a, 
+.tabs-wrapper .nav-tabs > li.active > a:hover, 
+.tabs-wrapper .nav-tabs > li.active > a:focus {
+	background-color: #3e9b04;
+}
+.tabs-wrapper .nav-tabs > li > a:hover {
+	color: #3e9b04;
+}
+.tab-content [data-toggle="collapse"] {
+	background-color: #3e9b04;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[5.7] PRICING TABLE - STYLES	
+/ -------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- /
+	PRICING TABLE - STYLE 1
+/ -------------------------------------------------------------------------------- */
+
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 { background:#FFF; }
+	
+	/***** header *****/
+	.gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go:hover .gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header-top { 
+		background:#3e9b04;
+	}
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header-top { background:#fff;}
+	
+	/* column default state */
+	.gw-go-col.gw-go-style1 .gw-go-header h3,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header h3 { color:#fff; }
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-header h3,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header h3,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-header h3 { color:#3e9b04; }
+	.gw-go-col.gw-go-style1 .gw-go-coinf, 
+	.gw-go-col.gw-go-style1 .gw-go-coinb { background: #fff;}
+
+	.gw-go-col.gw-go-style1 .gw-go-coinf div, 
+	.gw-go-col.gw-go-style1 .gw-go-coinb div { color:#3e9b04; }
+	.gw-go-col.gw-go-style1 .gw-go-coinf small, 
+	.gw-go-col.gw-go-style1 .gw-go-coinb small { color:#585858; }	
+	
+	/***** details *****/
+	/* column default state */
+	.gw-go-col.gw-go-style1 .gw-go-body,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body { border-bottom-color:#FFF; }
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-body { border-bottom-color:#8d6f3e; }	
+	/* column default state */
+	.gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body li { 
+		border-top-color:#FFF;
+		color:#333;
+	}
+	.gw-go .gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go:hover .gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body li {
+		color: #3e9b04;
+	}
+	
+	/***** footer *****/
+	
+/* -------------------------------------------------------------------------------- /
+	PRICING TABLE - STYLE 2
+/ -------------------------------------------------------------------------------- */
+
+	/* column default state */
+	.gw-go-col.gw-go-style2,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 { background:#FFF; }
+
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 { 
+		background:#3e9b04; 
+	}
+	
+	/***** header *****/
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header-top { 
+		background:#FFF;
+ }	
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-header-bottom,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header-bottom { 
+		background:#FFF;
+	}	
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-header h3,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header h3 { color:#3e9b04; }
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-header h3,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header h3,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-header h3 { color:#FFF; }
+
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb	{ 
+		border:solid 10px #3e9b04;
+		background:#3e9b04;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb div { 
+		background:transparent;
+		color: #fff;
+	}
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinf,	
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb { 
+		background: #fff;
+	}	
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf div,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinf div,	
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb div { 
+		background:transparent;
+		color:#3e9b04;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-coinb small,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb small { color:#313131; }
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb small { color:#fff; }
+	
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-body li,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-body li {
+		background:#ddd4c7;
+		color:#333;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-body li.gw-go-even,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-body li.gw-go-even { background:#fff; }	
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-body li,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-body li,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-body li {
+		background:none;
+		border-top-color:#FFF;
+		color:#FFF;
+	}	
+
+/* -------------------------------------------------------------------------------- /
+	[6]	MENU
+/ -------------------------------------------------------------------------------- */
+.navbar-default {
+	background-color: #3e9b04;
+	border-color: #bf3e11;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+	background-color: #3e9b04;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+	background-color: #3e9b04;
+}
+
+.sf-menu > li > a:before {
+	background-color: #3e9b04;
+}
+.sf-menu li {
+	background: #3e9b04;
+}
+.sf-menu li:hover, .sf-menu li.sfHover {
+	background: #3e9b04;
+}
+.sf-menu ul li {
+	background: #3e9b04;
+}
+.sf-menu ul ul li {
+	background: #3e9b04;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[7.1]	JPLAYER
+/ -------------------------------------------------------------------------------- */
+a.jp-play {
+	background: #3e9b04 url("../images/icons/player_red.png") 6px 8px no-repeat;
+}
+a.jp-play:hover {
+	background: #3e9b04 url("../images/icons/player_red.png") -27px 8px no-repeat;
+}
+a.jp-pause {
+	background: #3e9b04 url("../images/icons/player_red.png") 6px -22px no-repeat;
+}
+a.jp-pause:hover {
+	background: #3e9b04 url("../images/icons/player_red.png") -27px -22px no-repeat;
+}
+a.jp-play, a.jp-pause {
+	background-color: #3e9b04;
+}
+div.jp-play-bar {
+	background: #3e9b04;
+}
+div.jp-volume-bar-value {
+	background: #3e9b04;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[9.1]	FLEXSLIDER
+/ -------------------------------------------------------------------------------- */
+.flex-direction-nav a {
+	background-color: #3e9b04;
+}
+.flex-direction-nav .flex-prev {
+	background: #3e9b04 url('../images/icons/image_slider_prev.png') no-repeat center center;
+}
+.flex-direction-nav .flex-next {
+	background: #3e9b04 url('../images/icons/image_slider_next.png') no-repeat center center;
+}
+
+.single-wrap .media-wrap:not(.no-frame):after {
+	background-color: #3e9b04;
+}
+.single-wrap:hover .overlay-hover {
+	border-color: #3e9b04;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[10]	SLIDER REVOLUTION
+/ -------------------------------------------------------------------------------- */
+.tparrows {
+	background-color: #3e9b04;
+}
+.tp-rightarrow.default {
+	background: #3e9b04 url('../images/icons/slider_next.png') no-repeat 0 0;
+}
+.tp-leftarrow.default {
+	background: #3e9b04 url('../images/icons/slider_prev.png') no-repeat 0 0;
+}
+.tparrows:hover {
+	background-color: #ffffff;
+}
+
+.tp-caption.slider-title-quote {
+	border-left: 5px solid #3e9b04;
+	color: #3e9b04;
+}
+.tp-caption.slider-title-you-long {
+	border-left: 5px solid #3e9b04;
+	color: #3e9b04;
+}
+.tp-caption.slider-title-simple {
+	color: #3e9b04;
+}
+.tp-caption.slider-title-quote-short {
+	border-left: 5px solid #3e9b04;
+	color: #3e9b04;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[12]	CONTENT
+/ -------------------------------------------------------------------------------- */
+.ourmission {
+	background-color: #3e9b04;
+}
+
+.calendar_wrap thead th:last-child {
+	color: #3e9b04;
+}
+.calendar_wrap tbody a {
+	background: #3e9b04;
+}
+.social-icon:hover {
+	background-color: #3e9b04;
+	border-color: #3e9b04;
+}
+
+/*twitter*/
+.twitter-wrap a:not(.btn), .twitter-wrap a:not(.btn):visited {
+	color: #3e9b04;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[13]	SPECIAL CONTENT - Some special content for only html version
+/ -------------------------------------------------------------------------------- */
+#header .logo-wrap img {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: url('../../content/home/logo_green.png') no-repeat;
+	width: 94px;
+	height: 67px;
+	padding-left: 94px;
+}
+.slider-avatar img {	
+	content: url('../../content/slides/1/man_green.png');
+}
+.ad_widget {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: url('../../content/ad_widget/woman_green.png') no-repeat;
+	width: 192px;
+	height: 235px;
+	padding-left: 192px;
+}

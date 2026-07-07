@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Leaders' Church International Programs — Good Samaritan Community Outreach, Pakistan Inaugural Worship Service, and more kingdom impact programs.">
+  <title>Programs — Leaders' Church International</title>
+
+  <link rel="shortcut icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/modern.css">
+
+  <style>
+    /* Programs grid */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: var(--space-8);
+    }
+
+    .prog-card {
+      background: var(--color-white);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--color-gray-100);
+      position: relative;
+    }
+
+    .prog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-2xl);
+    }
+
+    [data-theme="dark"] .prog-card {
+      background: var(--color-gray-200);
+      border-color: var(--color-gray-300);
+    }
+
+    /* Image area */
+    .prog-card-image {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+    }
+
+    .prog-card-bg {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform var(--transition-slow);
+    }
+
+    .prog-card:hover .prog-card-bg {
+      transform: scale(1.07);
+    }
+
+    .prog-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(45,0,70,0.75) 0%, rgba(74,5,114,0.1) 60%, transparent 100%);
+    }
+
+    /* Category badge (top right) */
+    .prog-card-badge {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      background: rgba(201,162,39,0.9);
+      backdrop-filter: blur(4px);
+      border-radius: var(--radius-full);
+      padding: var(--space-1) var(--space-3);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--color-white);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Icon overlay (bottom left on image) */
+    .prog-card-icon {
+      position: absolute;
+      bottom: var(--space-4);
+      left: var(--space-4);
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.9);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-xl);
+      color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Body */
+    .prog-card-body {
+      padding: var(--space-6) var(--space-7);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .prog-card-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-gray-900);
+      margin: 0 0 var(--space-3);
+      line-height: 1.3;
+    }
+
+    [data-theme="dark"] .prog-card-title { color: var(--color-gray-100); }
+
+    .prog-card-desc {
+      font-size: var(--text-base);
+      color: var(--color-gray-600);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: var(--space-6);
+    }
+
+    [data-theme="dark"] .prog-card-desc { color: var(--color-gray-400); }
+
+    /* Accent bar at bottom of card */
+    .prog-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-base);
+    }
+
+    .prog-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Coming soon card */
+    .prog-card-coming-soon {
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    .coming-soon-tag {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(45,0,70,0.85);
+      border: 2px solid rgba(201,162,39,0.5);
+      border-radius: var(--radius-full);
+      padding: var(--space-2) var(--space-5);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-accent-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      z-index: 2;
+    }
+
+    /* Impact strip */
+    .impact-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-1);
+      background: var(--color-primary-dark);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      margin-top: var(--space-16);
+    }
+
+    .impact-item {
+      padding: var(--space-8);
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .impact-item:last-child { border-right: none; }
+
+    .impact-number {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      color: var(--color-accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+
+    .impact-label {
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.65);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 1024px) {
+      .impact-strip { grid-template-columns: repeat(2, 1fr); }
+      .impact-item  { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .impact-item:nth-child(2n) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    }
+
+    @media (max-width: 768px) {
+      .programs-grid { grid-template-columns: 1fr; }
+      .impact-strip  { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── Ordination Gallery ────────────────────────────────────── */
+
+    /* Mosaic hero layout */
+    .ord-mosaic {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      grid-template-rows: 460px;
+      gap: var(--space-2);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .ord-mosaic-main {
+      position: relative; overflow: hidden;
+    }
+    .ord-mosaic-main img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.55s ease;
+      display: block;
+    }
+    .ord-mosaic-main:hover img { transform: scale(1.04); }
+
+    .ord-mosaic-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: var(--space-2);
+    }
+    .ord-mosaic-thumb {
+      position: relative; overflow: hidden;
+    }
+    .ord-mosaic-thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .ord-mosaic-thumb:hover img { transform: scale(1.06); }
+
+    /* Shared overlay for mosaic */
+    .ord-mosaic-overlay {
+      position: absolute; inset: 0;
+      background: rgba(10,8,28,0);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s ease;
+    }
+    .ord-mosaic-overlay span {
+      width: 52px; height: 52px;
+      background: rgba(245,158,11,0.9);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.1rem;
+      opacity: 0; transform: scale(0.7);
+      transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .ord-mosaic-main:hover .ord-mosaic-overlay,
+    .ord-mosaic-thumb:hover .ord-mosaic-overlay { background: rgba(10,8,28,0.35); }
+    .ord-mosaic-main:hover .ord-mosaic-overlay span,
+    .ord-mosaic-thumb:hover .ord-mosaic-overlay span { opacity: 1; transform: scale(1); }
+
+    @media (max-width: 768px) {
+      .ord-mosaic { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .ord-mosaic-side { grid-template-columns: 1fr 1fr; grid-template-rows: 200px; }
+      .ord-mosaic-main { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<a href="#main-content" class="lci-skip-link">Skip to main content</a>
+
+<!-- ── HEADER ─────────────────────────────────────────────────── -->
+<header class="lci-header" id="lci-header">
+  <div class="lci-header-inner">
+    <a href="index.html" class="lci-logo" aria-label="Leaders' Church International — Home">
+      <img src="assets/images/logo.png" alt="LCI Logo" class="lci-logo-img">
+      <div class="lci-logo-text">
+        <span class="lci-logo-name">Leaders' Church International</span>
+        <span class="lci-logo-tagline">Citadel of Peace &amp; Righteousness</span>
+      </div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="lci-nav" role="list">
+        <li><a href="index.html"    class="lci-nav-link">Home</a></li>
+        <li><a href="about.html"    class="lci-nav-link">About</a></li>
+        <li><a href="pastors.html"  class="lci-nav-link">Pastors</a></li>
+        <li><a href="media.html"    class="lci-nav-link">Media</a></li>
+        <li><a href="programs.html" class="lci-nav-link active" aria-current="page">Programs</a></li>
+        <li><a href="contact.html"  class="lci-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lci-header-actions">
+      <button class="lci-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></button>
+      <a href="contact.html#give" class="lci-btn-give"><i class="fas fa-heart"></i> Give Online</a>
+      <button class="lci-menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="lci-mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+  <ul class="lci-mobile-nav-list" role="list">
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="about.html">📖 About LCI</a></li>
+    <li><a href="pastors.html">✝ Pastors' Corner</a></li>
+    <li><a href="media.html">🎵 Media</a></li>
+    <li><a href="programs.html" class="active">📋 Programs</a></li>
+    <li><a href="contact.html">📍 Contact</a></li>
+  </ul>
+  <div class="lci-mobile-actions">
+    <a href="contact.html#give" class="lci-btn lci-btn-gold lci-btn-lg"><i class="fas fa-heart"></i> Give Online</a>
+    <a href="contact.html#prayer" class="lci-btn lci-btn-outline-white lci-btn-lg"><i class="fas fa-hands-praying"></i> Prayer Request</a>
+  </div>
+</nav>
+
+<main id="main-content" class="lci-page-body">
+
+  <!-- ── PAGE HERO ──────────────────────────────────────────────── -->
+  <section class="lci-page-hero" id="page-hero">
+    <div class="hero-page-orb" style="width:340px;height:340px;background:radial-gradient(circle,rgba(99,102,241,0.24) 0%,transparent 70%);top:-70px;right:7%;--dur:10s;--delay:0s;" aria-hidden="true"></div>
+    <div class="hero-page-orb" style="width:210px;height:210px;background:radial-gradient(circle,rgba(245,158,11,0.22) 0%,transparent 70%);bottom:-40px;left:5%;--dur:8s;--delay:-4s;" aria-hidden="true"></div>
+    <div class="hero-page-orb" style="width:150px;height:150px;background:radial-gradient(circle,rgba(6,182,212,0.16) 0%,transparent 70%);top:45%;left:22%;--dur:13s;--delay:-2s;" aria-hidden="true"></div>
+    <div class="hero-cross-watermark" aria-hidden="true">✦</div>
+    <div class="lci-container" style="position:relative;z-index:2;">
+      <h1 class="lci-page-hero-title">Programs &amp; Outreach</h1>
+      <p class="lci-page-hero-subtitle">"Go into all the world and preach the gospel to every creature." — Mark 16:15</p>
+      <nav class="lci-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="lci-breadcrumb-sep" aria-hidden="true">/</span>
+        <span aria-current="page">Programs</span>
+      </nav>
+      <div class="hero-stats-row">
+        <div class="hero-stat-pill"><i class="fas fa-globe"></i> 2+ Nations Reached</div>
+        <div class="hero-stat-pill"><i class="fas fa-hands-helping"></i> Community Outreach</div>
+        <div class="hero-stat-pill"><i class="fas fa-church"></i> 6 Active Programs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROGRAMS GRID ──────────────────────────────────────────── -->
+  <section class="lci-section lci-section-gray" aria-labelledby="programs-heading">
+    <div class="lci-container">
+
+      <div class="lci-section-header lci-reveal">
+        <span class="lci-section-eyebrow">Kingdom Impact in Action</span>
+        <h2 class="lci-section-title" id="programs-heading">Our Programs &amp; Initiatives</h2>
+        <p class="lci-section-subtitle">From community outreach to international worship gatherings — every program is an expression of God's love in action.</p>
+      </div>
+
+      <div class="programs-grid">
+
+        <!-- Good Samaritan Outreach -->
+        <article class="prog-card lci-reveal lci-reveal-delay-1" aria-labelledby="prog1-title">
+          <div class="prog-card-image">
+            <div class="prog-card-bg" style="background-image: url('index_files/vlb_images1/41.jpg');" role="img" aria-label="Good Samaritan Community Outreach Program"></div>
+            <div class="prog-card-overlay"></div>
+            <span class="prog-card-badge">Outreach</span>
+            <div class="prog-card-icon"><i class="fas fa-hands-helping" aria-hidden="true"></i></div>
+          </div>
+          <div class="prog-card-body">
+            <h3 class="prog-card-title" id="prog1-title">Good Samaritan Community Outreach Program</h3>
+            <p class="prog-card-desc">Reaching out to the needy in our community with healthcare, material support, and the transformative love of Christ. Every soul matters to God, and to us.</p>
+            <a href="good_samaritan_outreach.html" class="lci-btn lci-btn-primary">
+              <i class="fas fa-images"></i> View Gallery
+            </a>
+          </div>
+        </article>
+
+        <!-- Pakistan Inaugural Worship Service -->
+        <article class="prog-card lci-reveal lci-reveal-delay-2" aria-labelledby="prog2-title">
+          <div class="prog-card-image">
+            <div class="prog-card-bg" style="background-image: url('content/gallery/piws.jpeg');" role="img" aria-label="Pakistan Inaugural Worship Service"></div>
+            <div class="prog-card-overlay"></div>
+            <span class="prog-card-badge">International</span>
+            <div class="prog-card-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+          </div>
+          <div class="prog-card-body">
+            <h3 class="prog-card-title" id="prog2-title">Pakistan Inaugural Worship Service</h3>
+            <p class="prog-card-desc">The landmark kick-off of Leaders' Church International in Pakistan — featuring a book launch, inaugural worship service, and a powerful time of fellowship and the Word.</p>
+            <a href="pakistan_inuagural.html" class="lci-btn lci-btn-primary">
+              <i class="fas fa-images"></i> View Gallery
+            </a>
+          </div>
+        </article>
+
+        <!-- LCI Ordination Ibadan -->
+        <article class="prog-card lci-reveal lci-reveal-delay-3" aria-labelledby="prog-ord-title">
+          <div class="prog-card-image">
+            <div class="prog-card-bg" style="background-image: url('content/gallery/Lci-Ordination-Ibadan/IMG_0001.jpg');" role="img" aria-label="LCI Ordination — Ibadan"></div>
+            <div class="prog-card-overlay"></div>
+            <span class="prog-card-badge">Ordination</span>
+            <div class="prog-card-icon"><i class="fas fa-cross" aria-hidden="true"></i></div>
+          </div>
+          <div class="prog-card-body">
+            <h3 class="prog-card-title" id="prog-ord-title">LCI Ordination — Ibadan, Nigeria</h3>
+            <p class="prog-card-desc">A historic moment of consecration as new ministers were ordained for Kingdom service in Ibadan, Nigeria. View 5 highlights below or browse all 46 photos on Google Drive.</p>
+            <a href="https://drive.google.com/drive/folders/1hOcRFrORl8rORxaeCS1p0A-sf043XqWM?usp=sharing" target="_blank" rel="noopener noreferrer" class="lci-btn lci-btn-primary">
+              <i class="fab fa-google-drive"></i> View All 46 Photos
+            </a>
+          </div>
+        </article>
+
+        <!-- Valiant Men International — Coming Soon -->
+        <article class="prog-card prog-card-coming-soon lci-reveal lci-reveal-delay-3" aria-labelledby="prog3-title" aria-describedby="prog3-status">
+          <div class="prog-card-image">
+            <div class="prog-card-bg" style="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));" role="img" aria-label="Valiant Men International"></div>
+            <div class="prog-card-overlay"></div>
+            <div class="coming-soon-tag" id="prog3-status" aria-label="Coming Soon">Coming Soon</div>
+            <span class="prog-card-badge">Men's Ministry</span>
+            <div class="prog-card-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+          </div>
+          <div class="prog-card-body">
+            <h3 class="prog-card-title" id="prog3-title">Valiant Men International</h3>
+            <p class="prog-card-desc">Equipping men to lead with integrity, strength, and spiritual purpose in their families and society — raising Kingdom-minded leaders for the 21st century.</p>
+            <span class="lci-btn lci-btn-primary" style="opacity:0.5; pointer-events:none;">
+              <i class="fas fa-clock"></i> Gallery Coming Soon
+            </span>
+          </div>
+        </article>
+
+        <!-- Apostolic Vanguard — Coming Soon -->
+        <article class="prog-card prog-card-coming-soon lci-reveal lci-reveal-delay-4" aria-labelledby="prog4-title" aria-describedby="prog4-status">
+          <div class="prog-card-image">
+            <div class="prog-card-bg" style="background: linear-gradient(135deg, #1a0030, var(--color-primary-dark));" role="img" aria-label="Apostolic Vanguard"></div>
+            <div class="prog-card-overlay"></div>
+            <div class="coming-soon-tag" id="prog4-status" aria-label="Coming Soon">Coming Soon</div>
+            <span class="prog-card-badge">Leadership</span>
+            <div class="prog-card-icon"><i class="fas fa-star" aria-hidden="true"></i></div>
+          </div>
+          <div class="prog-card-body">
+            <h3 class="prog-card-title" id="prog4-title">Israel Eledan Apostolic Vanguard</h3>
+            <p class="prog-card-desc">Leadership development and spiritual training for the next generation of Kingdom leaders — imparting knowledge, vision, and apostolic authority.</p>
+            <span class="lci-btn lci-btn-primary" style="opacity:0.5; pointer-events:none;">
+              <i class="fas fa-clock"></i> Gallery Coming Soon
+            </span>
+          </div>
+        </article>
+
+        <!-- Women Aflame International — Coming Soon -->
+        <article class="prog-card prog-card-coming-soon lci-reveal lci-reveal-delay-1" aria-labelledby="prog5-title" aria-describedby="prog5-status">
+          <div class="prog-card-image">
+            <div class="prog-card-bg" style="background: linear-gradient(135deg, #3d0050, #7b1fa2);" role="img" aria-label="Women Aflame International"></div>
+            <div class="prog-card-overlay"></div>
+            <div class="coming-soon-tag" id="prog5-status" aria-label="Coming Soon">Coming Soon</div>
+            <span class="prog-card-badge">Women's Ministry</span>
+            <div class="prog-card-icon"><i class="fas fa-fire" aria-hidden="true"></i></div>
+          </div>
+          <div class="prog-card-body">
+            <h3 class="prog-card-title" id="prog5-title">Women Aflame International</h3>
+            <p class="prog-card-desc">A vibrant non-denominational movement reaching women from all walks of life with the love of Christ — empowering women to walk in their divine purpose.</p>
+            <span class="lci-btn lci-btn-primary" style="opacity:0.5; pointer-events:none;">
+              <i class="fas fa-clock"></i> Gallery Coming Soon
+            </span>
+          </div>
+        </article>
+
+        <!-- Family Caring Fellowship — Coming Soon -->
+        <article class="prog-card prog-card-coming-soon lci-reveal lci-reveal-delay-2" aria-labelledby="prog6-title" aria-describedby="prog6-status">
+          <div class="prog-card-image">
+            <div class="prog-card-bg" style="background: linear-gradient(135deg, #1a2a6c, #2d4090);" role="img" aria-label="Family Caring Fellowship"></div>
+            <div class="prog-card-overlay"></div>
+            <div class="coming-soon-tag" id="prog6-status" aria-label="Coming Soon">Coming Soon</div>
+            <span class="prog-card-badge">Community</span>
+            <div class="prog-card-icon"><i class="fas fa-home" aria-hidden="true"></i></div>
+          </div>
+          <div class="prog-card-body">
+            <h3 class="prog-card-title" id="prog6-title">Family Caring Fellowship</h3>
+            <p class="prog-card-desc">Love-driven cell group gatherings building authentic community, accountability, and deep spiritual connection in the body of Christ.</p>
+            <span class="lci-btn lci-btn-primary" style="opacity:0.5; pointer-events:none;">
+              <i class="fas fa-clock"></i> Gallery Coming Soon
+            </span>
+          </div>
+        </article>
+
+      </div><!-- /.programs-grid -->
+
+      <!-- ── ORDINATION GALLERY ─────────────────────────────────── -->
+      <div id="ordination-gallery" style="margin-top: var(--space-16);">
+        <div class="lci-section-header lci-reveal" style="margin-bottom: var(--space-8);">
+          <span class="lci-section-eyebrow">LCI Ibadan</span>
+          <h2 class="lci-section-title">LCI Ordination — Ibadan</h2>
+          <p class="lci-section-subtitle">A historic moment of commissioning and consecration as new ministers were ordained for Kingdom service in Ibadan, Nigeria.</p>
+        </div>
+
+        <!-- LCI Ibadan Ordination Carousel — 5 highlight photos -->
+        <div class="lci-carousel-container lci-reveal" id="ibadan-carousel" style="margin-bottom: var(--space-8);">
+          <div class="lci-carousel-viewport">
+            <div class="lci-carousel-track">
+              <!-- Card 1 -->
+              <div class="lci-carousel-slide">
+                <div class="lci-carousel-card" onclick="openLightbox(0)">
+                  <img src="content/gallery/Lci-Ordination-Ibadan/IMG_0121.jpg" alt="LCI Ordination — Ibadan" loading="lazy">
+                  <div class="lci-carousel-card-overlay">
+                    <span class="lci-carousel-card-title">LCI Ordination — Ibadan</span>
+                    <span class="lci-carousel-card-icon"><i class="fas fa-expand-alt"></i></span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="lci-carousel-slide">
+                <div class="lci-carousel-card" onclick="openLightbox(1)">
+                  <img src="content/gallery/Lci-Ordination-Ibadan/IMG_0031.jpg" alt="Joyful Ordained Ministers" loading="lazy">
+                  <div class="lci-carousel-card-overlay">
+                    <span class="lci-carousel-card-title">Impartation</span>
+                    <span class="lci-carousel-card-icon"><i class="fas fa-expand-alt"></i></span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="lci-carousel-slide">
+                <div class="lci-carousel-card" onclick="openLightbox(2)">
+                  <img src="content/gallery/Lci-Ordination-Ibadan/IMG_0082.jpg" alt="Presentation of Certificates" loading="lazy">
+                  <div class="lci-carousel-card-overlay">
+                    <span class="lci-carousel-card-title">Gaze on the the Lord</span>
+                    <span class="lci-carousel-card-icon"><i class="fas fa-expand-alt"></i></span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div class="lci-carousel-slide">
+                <div class="lci-carousel-card" onclick="openLightbox(3)">
+                  <img src="content/gallery/Lci-Ordination-Ibadan/IMG_0107.jpg" alt="Group Photo of Ministers" loading="lazy">
+                  <div class="lci-carousel-card-overlay">
+                    <span class="lci-carousel-card-title">Father's Blessing</span>
+                    <span class="lci-carousel-card-icon"><i class="fas fa-expand-alt"></i></span>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 5 -->
+              <div class="lci-carousel-slide">
+                <div class="lci-carousel-card" onclick="openLightbox(4)">
+                  <img src="content/gallery/Lci-Ordination-Ibadan/IMG_0352.jpg" alt="Praise and Thanksgiving" loading="lazy">
+                  <div class="lci-carousel-card-overlay">
+                    <span class="lci-carousel-card-title">Group Photo of Ministers</span>
+                    <span class="lci-carousel-card-icon"><i class="fas fa-expand-alt"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Navigation Buttons -->
+          <button class="lci-carousel-nav lci-carousel-nav-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+          <button class="lci-carousel-nav lci-carousel-nav-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+          <!-- Dots -->
+          <div class="lci-carousel-dots"></div>
+        </div>
+
+        <!-- View full album on Google Drive -->
+        <div class="lci-reveal" style="text-align: center; margin-top: var(--space-4);">
+          <p style="color: var(--color-gray-600); margin-bottom: var(--space-4); font-size: var(--text-base);">
+            Showing 5 of 46 photos &mdash; view the full album on Google Drive.
+          </p>
+          <a href="https://drive.google.com/drive/folders/1hOcRFrORl8rORxaeCS1p0A-sf043XqWM?usp=sharing"
+             target="_blank" rel="noopener noreferrer"
+             class="lci-btn lci-btn-gold lci-btn-lg">
+            <i class="fab fa-google-drive"></i> View All 46 Photos on Google Drive
+          </a>
+        </div>
+
+      </div><!-- /#ordination-gallery -->
+
+      <!-- Impact Strip -->
+      <div class="impact-strip lci-reveal" style="margin-top: var(--space-16);">
+        <div class="impact-item">
+          <span class="impact-number">2+</span>
+          <span class="impact-label">Nations Reached</span>
+        </div>
+<!--         <div class="impact-item">
+          <span class="impact-number">80+</span>
+          <span class="impact-label">Outreach Photos</span>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number">35+</span>
+          <span class="impact-label">Pakistan Event Photos</span>
+        </div> -->
+        <div class="impact-item">
+          <span class="impact-number">100+</span>
+          <span class="impact-label">Ministry Programs</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GET INVOLVED CTA ───────────────────────────────────────── -->
+  <section class="lci-section lci-section-white" aria-labelledby="involved-heading">
+    <div class="lci-container" style="max-width: 720px; text-align: center;">
+      <span class="lci-section-eyebrow">Be Part of the Mission</span>
+      <h2 class="lci-section-title" id="involved-heading" class="lci-reveal">Get Involved &amp; Make an Impact</h2>
+      <p class="lci-section-subtitle lci-reveal lci-reveal-delay-1">Every hand given in service, every seed sown in faith, advances the Kingdom. Join the mission of Leaders' Church International.</p>
+      <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-8);" class="lci-reveal lci-reveal-delay-2">
+        <a href="contact.html" class="lci-btn lci-btn-primary lci-btn-lg">
+          <i class="fas fa-envelope"></i> Contact Us to Volunteer
+        </a>
+        <a href="contact.html#give" class="lci-btn lci-btn-gold lci-btn-lg">
+          <i class="fas fa-hand-holding-heart"></i> Support Our Programs
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer class="lci-footer">
+  <div class="lci-container">
+    <div class="lci-footer-grid">
+      <div class="lci-footer-brand">
+        <a href="index.html" class="lci-footer-logo">
+          <img src="assets/images/logo.png" alt="LCI Logo" class="lci-footer-logo-img">
+          <div class="lci-footer-logo-text">
+            <span class="name">Leaders' Church International</span>
+            <span class="tagline">Citadel of Peace &amp; Righteousness</span>
+          </div>
+        </a>
+        <p class="lci-footer-desc">A multi-ethnic, globally-diverse church community built on faith, purpose, and the enduring love of Christ.</p>
+        <div class="lci-social-links">
+          <a href="https://web.facebook.com/Leaders-Church-International-101252804654265/" target="_blank" rel="noopener" class="lci-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/israeleledan" target="_blank" rel="noopener" class="lci-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/israel_eledan" target="_blank" rel="noopener" class="lci-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com/channel/UC1tdE0iSOtPHIXh1OzLOnyA" target="_blank" rel="noopener" class="lci-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="lci-footer-heading">Quick Links</h3>
+        <ul class="lci-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About LCI</a></li>
+          <li><a href="pastors.html">Pastors' Corner</a></li>
+          <li><a href="media.html">Sermons &amp; Media</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="lci-footer-heading">Programs</h3>
+        <ul class="lci-footer-links">
+          <li><a href="good_samaritan_outreach.html">Good Samaritan Outreach</a></li>
+          <li><a href="pakistan_inuagural.html">Pakistan Inaugural Service</a></li>
+          <li><a href="about.html#ministries">Valiant Men International</a></li>
+          <li><a href="about.html#ministries">Women Aflame International</a></li>
+          <li><a href="about.html#ministries">Apostolic Vanguard</a></li>
+          <li><a href="about.html#ministries">Family Caring Fellowship</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="lci-footer-heading">Contact</h3>
+        <div class="lci-footer-contact-item"><span class="lci-footer-contact-icon"><i class="fas fa-map-marker-alt"></i></span><span>6165 Lakeside Circle, Lithonia, GA 30038, USA</span></div>
+        <div class="lci-footer-contact-item"><span class="lci-footer-contact-icon"><i class="fas fa-phone"></i></span><span>USA: +1 240-486-4078</span></div>
+        <div class="lci-footer-contact-item"><span class="lci-footer-contact-icon"><i class="fas fa-phone-alt"></i></span><span>Nigeria: +234 8133494804</span></div>
+        <div class="lci-footer-contact-item"><span class="lci-footer-contact-icon"><i class="fas fa-envelope"></i></span><a href="mailto:contact@leaderschurchinternational.org" style="color: var(--color-accent-light); text-decoration: none;">contact@leaderschurchinternational.org</a></div>
+      </div>
+    </div>
+    <hr class="lci-footer-divider">
+    <div class="lci-footer-bottom">
+      <p class="lci-footer-copyright">&copy; 2026 <a href="index.html">Leaders' Church International</a>. All rights reserved.</p>
+      <span style="font-size: var(--text-xs); color: rgba(255,255,255,0.35);">Thank you for visiting LCI's website. God bless you!</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="lci-back-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></a>
+
+<script>
+(function() {
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon   = document.getElementById('themeIcon');
+  const savedTheme  = localStorage.getItem('lci-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  themeToggle.addEventListener('click', function() {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('lci-theme', next);
+    themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  });
+
+  const header = document.getElementById('lci-header');
+  window.addEventListener('scroll', function() { header.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav  = document.getElementById('mobileNav');
+  menuToggle.addEventListener('click', function() {
+    const isOpen = mobileNav.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileNav.setAttribute('aria-hidden', String(!isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileNav.classList.remove('open'); menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false'); mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+
+  const backTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() { backTop.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
+  backTop.addEventListener('click', function(e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  const reveals = document.querySelectorAll('.lci-reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { io.observe(el); });
+  } else { reveals.forEach(function(el) { el.classList.add('revealed'); }); }
+})();
+</script>
+<!-- ── LIGHTBOX ──────────────────────────────────────────────── -->
+<div id="lci-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb-inner">
+    <button class="lb-close" id="lb-close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+    <div class="lb-img-wrap">
+      <button class="lb-prev" id="lb-prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+      <img src="" id="lb-img" alt="Gallery image">
+      <button class="lb-next" id="lb-next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="lb-counter"><span id="lb-cur">1</span> / <span id="lb-tot">1</span></div>
+    <div class="lb-thumbstrip" id="lb-thumbstrip"></div>
+  </div>
+</div>
+
+<script>
+/* ── Ordination Gallery Lightbox ─────────────────────────────── */
+(function () {
+  var IMAGES = [
+    'content/gallery/Lci-Ordination-Ibadan/IMG_0001.jpg',
+    'content/gallery/Lci-Ordination-Ibadan/IMG_0031.jpg',
+    'content/gallery/Lci-Ordination-Ibadan/IMG_0082.jpg',
+    'content/gallery/Lci-Ordination-Ibadan/IMG_0107.jpg',
+    'content/gallery/Lci-Ordination-Ibadan/IMG_0352.jpg'
+  ];
+
+  var lb       = document.getElementById('lci-lightbox');
+  var lbImg    = document.getElementById('lb-img');
+  var lbCur    = document.getElementById('lb-cur');
+  var lbTot    = document.getElementById('lb-tot');
+  var lbStrip  = document.getElementById('lb-thumbstrip');
+  var cur      = 0;
+  var thumbsBuilt = false;
+
+  lbTot.textContent = IMAGES.length;
+
+  /* Build thumbnail strip lazily — only when lightbox first opens */
+  function buildThumbs() {
+    if (thumbsBuilt) return;
+    thumbsBuilt = true;
+    IMAGES.forEach(function (src, i) {
+      var t = document.createElement('img');
+      t.src = src; t.className = 'lb-thumb'; t.alt = 'Thumbnail ' + (i+1);
+      t.loading = 'lazy';
+      t.addEventListener('click', function () { goTo(i); });
+      lbStrip.appendChild(t);
+    });
+  }
+
+  function getThumbs() { return lbStrip.querySelectorAll('.lb-thumb'); }  function goTo(index) {
+    cur = (index + IMAGES.length) % IMAGES.length;
+    lbImg.classList.add('fading');
+    setTimeout(function () {
+      lbImg.src = IMAGES[cur];
+      lbImg.alt = 'LCI Ordination Ibadan — Photo ' + (cur + 1);
+      lbCur.textContent = cur + 1;
+      lbImg.classList.remove('fading');
+    }, 220);
+    /* Update active thumb */
+    getThumbs().forEach(function (t, i) { t.classList.toggle('active', i === cur); });
+    /* Scroll thumb into view */
+    var active = lbStrip.querySelectorAll('.lb-thumb')[cur];
+    if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+
+  window.openLightbox = function (index) {
+    buildThumbs(); /* build thumbnails only on first open */
+    cur = index;
+    lbImg.src = IMAGES[cur];
+    lbImg.alt = 'LCI Ordination Ibadan — Photo ' + (cur + 1);
+    lbCur.textContent = cur + 1;
+    getThumbs().forEach(function (t, i) { t.classList.toggle('active', i === cur); });
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    /* Scroll active thumb into view after open */
+    setTimeout(function () {
+      var active = lbStrip.querySelectorAll('.lb-thumb')[cur];
+      if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }, 100);
+  };
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', function () { goTo(cur - 1); });
+  document.getElementById('lb-next').addEventListener('click', function () { goTo(cur + 1); });
+
+  /* Close on backdrop click */
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLightbox(); });
+
+  /* Keyboard nav */
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'ArrowRight') goTo(cur + 1);
+    else if (e.key === 'ArrowLeft') goTo(cur - 1);
+    else if (e.key === 'Escape') closeLightbox();
+  });
+
+  /* Swipe support */
+  var touchStartX = 0;
+  lb.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) goTo(dx < 0 ? cur + 1 : cur - 1);
+  }, { passive: true });
+
+})();
+
+/* ── Ibadan Ordination Carousel ──────────────────────────────── */
+(function () {
+  var container = document.getElementById('ibadan-carousel');
+  if (!container) return;
+  var track = container.querySelector('.lci-carousel-track');
+  var prevBtn = container.querySelector('.lci-carousel-nav-prev');
+  var nextBtn = container.querySelector('.lci-carousel-nav-next');
+  var dotsContainer = container.querySelector('.lci-carousel-dots');
+  var slides = Array.from(track.children);
+  var index = 0;
+  var slideCount = slides.length;
+  var autoplayTimer;
+
+  function getItemsPerView() {
+    var width = window.innerWidth;
+    if (width > 1024) return 3;
+    if (width > 768) return 2;
+    return 1;
+  }
+
+  function updateCarousel() {
+    var itemsPerView = getItemsPerView();
+    var maxIndex = Math.max(0, slideCount - itemsPerView);
+    if (index > maxIndex) index = maxIndex;
+    var offset = -(index * (100 / itemsPerView));
+    track.style.transform = 'translateX(' + offset + '%)';
+
+    var dots = dotsContainer.querySelectorAll('.lci-carousel-dot');
+    dots.forEach(function(dot, i) {
+      dot.classList.toggle('active', i === index);
+    });
+
+    if (prevBtn) prevBtn.style.opacity = index === 0 ? '0.4' : '1';
+    if (nextBtn) nextBtn.style.opacity = index === maxIndex ? '0.4' : '1';
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    var itemsPerView = getItemsPerView();
+    var maxIndex = Math.max(0, slideCount - itemsPerView);
+    for (var i = 0; i <= maxIndex; i++) {
+      var dot = document.createElement('button');
+      dot.className = 'lci-carousel-dot';
+      if (i === 0) dot.className += ' active';
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      (function(idx) {
+        dot.addEventListener('click', function() {
+          index = idx;
+          updateCarousel();
+          resetAutoplay();
+        });
+      })(i);
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      if (index > 0) {
+        index--;
+        updateCarousel();
+        resetAutoplay();
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      var itemsPerView = getItemsPerView();
+      var maxIndex = Math.max(0, slideCount - itemsPerView);
+      if (index < maxIndex) {
+        index++;
+        updateCarousel();
+        resetAutoplay();
+      } else {
+        index = 0;
+        updateCarousel();
+        resetAutoplay();
+      }
+    });
+  }
+
+  var startX = 0;
+  var isSwiping = false;
+  container.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    isSwiping = true;
+  }, { passive: true });
+
+  container.addEventListener('touchend', function(e) {
+    if (!isSwiping) return;
+    var diffX = e.changedTouches[0].clientX - startX;
+    if (Math.abs(diffX) > 50) {
+      if (diffX < 0) {
+        var itemsPerView = getItemsPerView();
+        var maxIndex = Math.max(0, slideCount - itemsPerView);
+        if (index < maxIndex) {
+          index++;
+          updateCarousel();
+          resetAutoplay();
+        }
+      } else {
+        if (index > 0) {
+          index--;
+          updateCarousel();
+          resetAutoplay();
+        }
+      }
+    }
+    isSwiping = false;
+  }, { passive: true });
+
+  function startAutoplay() {
+    autoplayTimer = setInterval(function() {
+      var itemsPerView = getItemsPerView();
+      var maxIndex = Math.max(0, slideCount - itemsPerView);
+      if (index < maxIndex) index++; else index = 0;
+      updateCarousel();
+    }, 4500);
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  }
+
+  buildDots();
+  updateCarousel();
+  startAutoplay();
+
+  window.addEventListener('resize', function() {
+    buildDots();
+    updateCarousel();
+  });
+})();
+</script>
+
+<script src="assets/js/lci-animations.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+/* -------------------------------------------------------------------------------- /
+	[1]	SETUP - general settings, common classes
+/ -------------------------------------------------------------------------------- */
+body .content-wrapper {
+	background: #f6f5f2;
+}
+
+a:hover, a:focus {
+	color: #008aff;
+}
+a.h1:hover, a.h2:hover, a.h3:hover, a.h4:hover, a.h5:hover, a.h6:hover {
+	color: #008aff;
+}
+abbr {
+	color: #008aff;
+}
+mark {
+	background-color: #008aff;
+}
+mark.light {
+	background-color: #008aff;
+}
+abbr[title], abbr[data-original-title] {
+	border-bottom: 1px dotted #008aff;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[1.1]	COMMON LIST STYLE - UL common classes
+/ -------------------------------------------------------------------------------- */
+ul.toggle > li > a:hover {
+	color: #008aff;
+}
+ul.list-fqa > li > a:hover:before {
+	color: #008aff;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[2]	COMMON CLASS
+/ -------------------------------------------------------------------------------- */
+.text-primary {
+	color: #008aff;
+}
+.title-primary:after {
+	background-color: #008aff;
+}
+
+.avatar-circle {
+	border: 10px solid #008aff;
+}
+
+.by-author a:hover {
+	color: #008aff;
+}
+
+.badge-circle {
+	background-color: #008aff;
+}
+.border-top {
+	border-top: 2px solid #008aff;
+}
+.border-top {
+	border-top-color: #008aff;
+}
+
+.overlay-inner .glyphicon, .overlay-hover .glyphicon {
+	background-color: #008aff;
+}
+
+.thumbnail:hover .overlay-hover {
+	border-color: #008aff;
+}
+.thumbnail:hover .border-inner {
+	border-color: #008aff;
+}
+.thumbnail .caption:before {
+	background-color: #008aff;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[3]	RESET BOOTSTRAP CLASS
+/ -------------------------------------------------------------------------------- */
+.btn-default {
+	background-color: #008aff;
+	border-color: #008aff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+	background-color: #008aff;
+	border-color: #008aff;
+}
+.btn-up {
+	background-color: #008aff;
+}
+.input-group .btn.input-addon:hover {
+	background-color: #008aff;
+}
+.input-group .form-control:focus + .btn.input-addon:hover {
+	border-color: #008aff;
+}
+.form-control:focus {
+	border: 1px solid #008aff;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[4]	SHORTCODES
+/ -------------------------------------------------------------------------------- */
+/* dropcap */
+.dropcap {
+	color: #008aff;
+}
+/* progress bar */
+.progress .progress-bar {
+	background-color: #008aff;
+	color: #008aff;
+}
+.progress-overall .progress-rotate {
+	background-color: #008aff;
+}
+.progress-overall .progress-overall-content {
+	background-color: #f6f5f2;
+}
+
+/* tabs */
+.tabs-wrapper .nav-tabs > li.active > a, 
+.tabs-wrapper .nav-tabs > li.active > a:hover, 
+.tabs-wrapper .nav-tabs > li.active > a:focus {
+	background-color: #008aff;
+}
+.tabs-wrapper .nav-tabs > li > a:hover {
+	color: #008aff;
+}
+.tab-content [data-toggle="collapse"] {
+	background-color: #008aff;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[5.7] PRICING TABLE - STYLES	
+/ -------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- /
+	PRICING TABLE - STYLE 1
+/ -------------------------------------------------------------------------------- */
+
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 { background:#FFF; }
+	
+	/***** header *****/
+	.gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go:hover .gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header-top { 
+		background:#008aff;
+	}
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header-top { background:#fff;}
+	
+	/* column default state */
+	.gw-go-col.gw-go-style1 .gw-go-header h3,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header h3 { color:#fff; }
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-header h3,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header h3,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-header h3 { color:#008aff; }
+	.gw-go-col.gw-go-style1 .gw-go-coinf, 
+	.gw-go-col.gw-go-style1 .gw-go-coinb { background: #fff;}
+
+	.gw-go-col.gw-go-style1 .gw-go-coinf div, 
+	.gw-go-col.gw-go-style1 .gw-go-coinb div { color:#008aff; }
+	.gw-go-col.gw-go-style1 .gw-go-coinf small, 
+	.gw-go-col.gw-go-style1 .gw-go-coinb small { color:#585858; }	
+	
+	/***** details *****/
+	/* column default state */
+	.gw-go-col.gw-go-style1 .gw-go-body,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body { border-bottom-color:#FFF; }
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-body { border-bottom-color:#8d6f3e; }	
+	/* column default state */
+	.gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body li { 
+		border-top-color:#FFF;
+		color:#333;
+	}
+	.gw-go .gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go:hover .gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body li {
+		color: #008aff;
+	}
+	
+	/***** footer *****/
+	
+/* -------------------------------------------------------------------------------- /
+	PRICING TABLE - STYLE 2
+/ -------------------------------------------------------------------------------- */
+
+	/* column default state */
+	.gw-go-col.gw-go-style2,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 { background:#FFF; }
+
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 { 
+		background:#008aff; 
+	}
+	
+	/***** header *****/
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header-top { 
+		background:#FFF;
+ }	
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-header-bottom,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header-bottom { 
+		background:#FFF;
+	}	
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-header h3,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header h3 { color:#008aff; }
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-header h3,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header h3,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-header h3 { color:#FFF; }
+
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb	{ 
+		border:solid 10px #008aff;
+		background:#008aff;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb div { 
+		background:transparent;
+		color: #fff;
+	}
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinf,	
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb { 
+		background: #fff;
+	}	
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf div,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinf div,	
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb div { 
+		background:transparent;
+		color:#008aff;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-coinb small,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb small { color:#313131; }
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb small { color:#fff; }
+	
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-body li,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-body li {
+		background:#ddd4c7;
+		color:#333;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-body li.gw-go-even,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-body li.gw-go-even { background:#fff; }	
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-body li,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-body li,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-body li {
+		background:none;
+		border-top-color:#FFF;
+		color:#FFF;
+	}	
+
+/* -------------------------------------------------------------------------------- /
+	[6]	MENU
+/ -------------------------------------------------------------------------------- */
+.navbar-default {
+	background-color: #008aff;
+	border-color: #bf3e11;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+	background-color: #008aff;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+	background-color: #008aff;
+}
+
+.sf-menu > li > a:before {
+	background-color: #008aff;
+}
+.sf-menu li {
+	background: #008aff;
+}
+.sf-menu li:hover, .sf-menu li.sfHover {
+	background: #008aff;
+}
+.sf-menu ul li {
+	background: #008aff;
+}
+.sf-menu ul ul li {
+	background: #008aff;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[7.1]	JPLAYER
+/ -------------------------------------------------------------------------------- */
+a.jp-play {
+	background: #008aff url("../images/icons/player_red.png") 6px 8px no-repeat;
+}
+a.jp-play:hover {
+	background: #008aff url("../images/icons/player_red.png") -27px 8px no-repeat;
+}
+a.jp-pause {
+	background: #008aff url("../images/icons/player_red.png") 6px -22px no-repeat;
+}
+a.jp-pause:hover {
+	background: #008aff url("../images/icons/player_red.png") -27px -22px no-repeat;
+}
+a.jp-play, a.jp-pause {
+	background-color: #008aff;
+}
+div.jp-play-bar {
+	background: #008aff;
+}
+div.jp-volume-bar-value {
+	background: #008aff;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[9.1]	FLEXSLIDER
+/ -------------------------------------------------------------------------------- */
+.flex-direction-nav a {
+	background-color: #008aff;
+}
+.flex-direction-nav .flex-prev {
+	background: #008aff url('../images/icons/image_slider_prev.png') no-repeat center center;
+}
+.flex-direction-nav .flex-next {
+	background: #008aff url('../images/icons/image_slider_next.png') no-repeat center center;
+}
+
+.single-wrap .media-wrap:not(.no-frame):after {
+	background-color: #008aff;
+}
+.single-wrap:hover .overlay-hover {
+	border-color: #008aff;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[10]	SLIDER REVOLUTION
+/ -------------------------------------------------------------------------------- */
+.tparrows {
+	background-color: #008aff;
+}
+.tp-rightarrow.default {
+	background: #008aff url('../images/icons/slider_next.png') no-repeat 0 0;
+}
+.tp-leftarrow.default {
+	background: #008aff url('../images/icons/slider_prev.png') no-repeat 0 0;
+}
+.tparrows:hover {
+	background-color: #ffffff;
+}
+
+.tp-caption.slider-title-quote {
+	border-left: 5px solid #008aff;
+	color: #008aff;
+}
+.tp-caption.slider-title-you-long {
+	border-left: 5px solid #008aff;
+	color: #008aff;
+}
+.tp-caption.slider-title-simple {
+	color: #008aff;
+}
+.tp-caption.slider-title-quote-short {
+	border-left: 5px solid #008aff;
+	color: #008aff;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[12]	CONTENT
+/ -------------------------------------------------------------------------------- */
+.ourmission {
+	background-color: #008aff;
+}
+
+.calendar_wrap thead th:last-child {
+	color: #008aff;
+}
+.calendar_wrap tbody a {
+	background: #008aff;
+}
+.social-icon:hover {
+	background-color: #008aff;
+	border-color: #008aff;
+}
+
+/*twitter*/
+.twitter-wrap a:not(.btn), .twitter-wrap a:not(.btn):visited {
+	color: #008aff;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[13]	SPECIAL CONTENT - Some special content for only html version
+/ -------------------------------------------------------------------------------- */
+#header .logo-wrap img {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: url('../../content/home/logo_blue.png') no-repeat;
+	width: 94px;
+	height: 67px;
+	padding-left: 94px;
+}
+.slider-avatar img {	
+	content: url('../../content/slides/1/man_blue.png');
+}
+.ad_widget {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: url('../../content/ad_widget/woman_blue.png') no-repeat;
+	width: 192px;
+	height: 235px;
+	padding-left: 192px;
+}

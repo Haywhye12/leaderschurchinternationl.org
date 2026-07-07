@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Leaders' Church International — find our address, phone numbers, service times, social media, and submit a prayer request or message.">
+  <title>Contact — Leaders' Church International</title>
+
+  <link rel="shortcut icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/modern.css">
+
+  <style>
+    /* Contact info grid */
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+
+    .contact-info-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-gray-100);
+      transition: all var(--transition-base);
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--color-primary);
+    }
+
+    [data-theme="dark"] .contact-info-card {
+      background: var(--color-gray-200);
+      border-color: var(--color-gray-300);
+    }
+
+    .cic-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(74,5,114,0.1), rgba(201,162,39,0.1));
+      border-radius: var(--radius-xl);
+      display: flex; align-items: center; justify-content: center;
+      font-size: var(--text-2xl);
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+      transition: all var(--transition-base);
+    }
+
+    .contact-info-card:hover .cic-icon {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: var(--color-white);
+      transform: scale(1.1);
+    }
+
+    .cic-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-gray-900);
+      margin: 0 0 var(--space-3);
+    }
+
+    [data-theme="dark"] .cic-title { color: var(--color-gray-100); }
+
+    .cic-lines {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .cic-line {
+      font-size: var(--text-sm);
+      color: var(--color-gray-600);
+      line-height: 1.6;
+    }
+
+    [data-theme="dark"] .cic-line { color: var(--color-gray-400); }
+
+    .cic-line a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cic-line a:hover { text-decoration: underline; }
+
+    /* Map wrapper */
+    .map-section {
+      position: relative;
+    }
+
+    .map-section .lci-map-wrap {
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .map-section .lci-map-wrap iframe {
+      height: 450px;
+    }
+
+    /* Two-col form layout */
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+
+    /* Form card */
+    .form-card {
+      background: var(--color-white);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-9);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--color-gray-100);
+    }
+
+    [data-theme="dark"] .form-card {
+      background: var(--color-gray-200);
+      border-color: var(--color-gray-300);
+    }
+
+    .form-card-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--color-gray-900);
+      margin: 0 0 var(--space-2);
+    }
+
+    [data-theme="dark"] .form-card-title { color: var(--color-gray-100); }
+
+    .form-card-subtitle {
+      font-size: var(--text-base);
+      color: var(--color-gray-600);
+      margin-bottom: var(--space-6);
+      line-height: 1.6;
+    }
+
+    [data-theme="dark"] .form-card-subtitle { color: var(--color-gray-400); }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+
+    /* Form tab toggle */
+    .form-tab-nav {
+      display: flex;
+      gap: var(--space-2);
+      background: var(--color-gray-100);
+      padding: var(--space-1);
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--space-6);
+    }
+
+    [data-theme="dark"] .form-tab-nav { background: var(--color-gray-300); }
+
+    .form-tab-btn {
+      flex: 1;
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-gray-600);
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .form-tab-btn.active {
+      background: var(--color-white);
+      color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    [data-theme="dark"] .form-tab-btn.active {
+      background: var(--color-gray-100);
+    }
+
+    /* Sidebar info */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    .sidebar-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-7);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-gray-100);
+    }
+
+    [data-theme="dark"] .sidebar-card {
+      background: var(--color-gray-200);
+      border-color: var(--color-gray-300);
+    }
+
+    .sidebar-card-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-gray-900);
+      margin: 0 0 var(--space-4);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    [data-theme="dark"] .sidebar-card-title { color: var(--color-gray-100); }
+
+    .sidebar-card-title i {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, rgba(74,5,114,0.1), rgba(201,162,39,0.1));
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: var(--text-base);
+      color: var(--color-primary);
+    }
+
+    .service-schedule {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .service-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-gray-50);
+      border-radius: var(--radius-lg);
+      font-size: var(--text-sm);
+    }
+
+    [data-theme="dark"] .service-row { background: var(--color-gray-300); }
+
+    .service-row-label {
+      font-weight: 700;
+      color: var(--color-gray-800);
+    }
+
+    [data-theme="dark"] .service-row-label { color: var(--color-gray-200); }
+
+    .service-row-time {
+      font-weight: 600;
+      color: var(--color-primary);
+      font-size: var(--text-xs);
+    }
+
+    [data-theme="dark"] .service-row-time { color: var(--color-primary-light); }
+
+    /* Social connect grid */
+    .social-connect-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3);
+    }
+
+    .social-connect-btn {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-white);
+      transition: all var(--transition-fast);
+    }
+
+    .social-connect-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      color: var(--color-white);
+      text-decoration: none;
+    }
+
+    .social-connect-btn.fb  { background: #1877f2; }
+    .social-connect-btn.yt  { background: #ff0000; }
+    .social-connect-btn.tw  { background: #1da1f2; }
+    .social-connect-btn.ig  { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .social-connect-btn.li  { background: #0077b5; }
+    .social-connect-btn.em  { background: var(--color-primary); }
+
+    /* Form success/error messages */
+    .form-message {
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+      display: none;
+    }
+
+    .form-message.success {
+      background: rgba(22,163,74,0.1);
+      color: var(--color-success);
+      border: 1px solid rgba(22,163,74,0.25);
+    }
+
+    .form-message.error {
+      background: rgba(220,38,38,0.1);
+      color: var(--color-error);
+      border: 1px solid rgba(220,38,38,0.25);
+    }
+
+    /* Captcha row */
+    .captcha-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .captcha-label {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-gray-700);
+      white-space: nowrap;
+      background: var(--color-gray-100);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--color-gray-200);
+    }
+
+    [data-theme="dark"] .captcha-label {
+      background: var(--color-gray-300);
+      color: var(--color-gray-200);
+      border-color: var(--color-gray-400);
+    }
+
+    @media (max-width: 1024px) {
+      .contact-info-grid   { grid-template-columns: repeat(2, 1fr); }
+      .contact-main-grid   { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .contact-info-grid   { grid-template-columns: 1fr; }
+      .form-row            { grid-template-columns: 1fr; }
+      .social-connect-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Branch Locations ──────────────────────────────────────── */
+    .branches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .branch-card {
+      background: var(--color-white);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-gray-100);
+      border-top: 4px solid var(--color-primary);
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .branch-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+      border-top-color: var(--color-accent);
+    }
+
+    [data-theme="dark"] .branch-card {
+      background: var(--color-gray-200);
+      border-color: var(--color-gray-300);
+      border-top-color: var(--color-primary-light);
+    }
+
+    .branch-flag {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .branch-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-gray-900);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    [data-theme="dark"] .branch-title { color: var(--color-gray-100); }
+
+    .branch-details {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      flex: 1;
+    }
+
+    .branch-detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--color-gray-600);
+      line-height: 1.55;
+    }
+
+    [data-theme="dark"] .branch-detail-row { color: var(--color-gray-400); }
+
+    .branch-detail-row i {
+      width: 18px;
+      color: var(--color-primary);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    [data-theme="dark"] .branch-detail-row i { color: var(--color-primary-light); }
+
+    .branch-detail-row a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .branch-detail-row a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .branches-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="lci-skip-link">Skip to main content</a>
+
+<!-- ── HEADER ─────────────────────────────────────────────────── -->
+<header class="lci-header" id="lci-header">
+  <div class="lci-header-inner">
+    <a href="index.html" class="lci-logo" aria-label="Leaders' Church International — Home">
+      <img src="assets/images/lci-logo.svg" alt="LCI Logo" class="lci-logo-img">
+      <div class="lci-logo-text">
+        <span class="lci-logo-name">Leaders' Church International</span>
+        <span class="lci-logo-tagline">Citadel of Peace &amp; Righteousness</span>
+      </div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="lci-nav" role="list">
+        <li><a href="index.html"    class="lci-nav-link">Home</a></li>
+        <li><a href="about.html"    class="lci-nav-link">About</a></li>
+        <li><a href="pastors.html"  class="lci-nav-link">Pastors</a></li>
+        <li><a href="media.html"    class="lci-nav-link">Media</a></li>
+        <li><a href="programs.html" class="lci-nav-link">Programs</a></li>
+        <li><a href="contact.html"  class="lci-nav-link active" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lci-header-actions">
+      <button class="lci-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon" id="themeIcon"></i></button>
+      <a href="#give" class="lci-btn-give"><i class="fas fa-heart"></i> Give Online</a>
+      <button class="lci-menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="lci-mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+  <ul class="lci-mobile-nav-list" role="list">
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="about.html">📖 About LCI</a></li>
+    <li><a href="pastors.html">✝ Pastors' Corner</a></li>
+    <li><a href="media.html">🎵 Media</a></li>
+    <li><a href="programs.html">📋 Programs</a></li>
+    <li><a href="contact.html" class="active">📍 Contact</a></li>
+  </ul>
+  <div class="lci-mobile-actions">
+    <a href="#give" class="lci-btn lci-btn-gold lci-btn-lg"><i class="fas fa-heart"></i> Give Online</a>
+    <a href="#prayer" class="lci-btn lci-btn-outline-white lci-btn-lg"><i class="fas fa-hands-praying"></i> Prayer Request</a>
+  </div>
+</nav>
+
+<main id="main-content" class="lci-page-body">
+
+  <!-- ── PAGE HERO ──────────────────────────────────────────────── -->
+  <section class="lci-page-hero">
+    <div class="lci-container" style="position: relative; z-index: 1;">
+      <h1 class="lci-page-hero-title">Get in Touch</h1>
+      <p class="lci-page-hero-subtitle">"For where two or three are gathered in My name, I am there among them." — Matthew 18:20</p>
+      <nav class="lci-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="lci-breadcrumb-sep" aria-hidden="true">/</span>
+        <span aria-current="page">Contact</span>
+      </nav>
+      <div class="hero-stats-row">
+        <div class="hero-stat-pill"><i class="fas fa-globe"></i> 2+ Nations</div>
+        <div class="hero-stat-pill"><i class="fas fa-map-marker-alt"></i> 5 Branches</div>
+        <div class="hero-stat-pill"><i class="fas fa-envelope"></i> Always Reachable</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT INFO CARDS ─────────────────────────────────────── -->
+  <section class="lci-section lci-section-white" aria-labelledby="contact-info-heading">
+    <div class="lci-container">
+      <h2 id="contact-info-heading" class="lci-sr-only">Contact Information</h2>
+      <div class="contact-info-grid">
+
+        <div class="contact-info-card lci-reveal lci-reveal-delay-1">
+          <div class="cic-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+          <h3 class="cic-title">Our Location</h3>
+          <div class="cic-lines">
+            <span class="cic-line"><strong>USA Headquarters:</strong></span>
+            <span class="cic-line">6165 Lakeside Circle</span>
+            <span class="cic-line">Lithonia, GA 30038, United States</span>
+          </div>
+          <a href="https://maps.google.com/?q=6165+Lakeside+Cir,+Stonecrest,+GA+30038" target="_blank" rel="noopener"
+             class="lci-btn lci-btn-outline lci-btn-sm" style="margin-top: var(--space-4); display: inline-flex;">
+            <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+
+        <div class="contact-info-card lci-reveal lci-reveal-delay-2">
+          <div class="cic-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+          <h3 class="cic-title">Phone Numbers</h3>
+          <div class="cic-lines">
+            <span class="cic-line"><strong>USA:</strong></span>
+            <span class="cic-line"><a href="tel:+12404864078">+1 240-486-4078</a></span>
+            <span class="cic-line"><a href="tel:+14709028204">+1 470-902-8204</a></span>
+            <span class="cic-line">Fax: +1 470-219-5668</span>
+            <span class="cic-line" style="margin-top: var(--space-2);"><strong>Nigeria:</strong></span>
+            <span class="cic-line"><a href="tel:+2348133494804">+234 8133494804</a></span>
+            <span class="cic-line"><a href="tel:+2348094832397">+234 8094832397</a></span>
+            <span class="cic-line"><a href="tel:+2349095311147">+234 9095311147</a></span>
+          </div>
+        </div>
+
+        <div class="contact-info-card lci-reveal lci-reveal-delay-3">
+          <div class="cic-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+          <h3 class="cic-title">Service Schedule</h3>
+          <div class="cic-lines">
+            <span class="cic-line"><strong>Weekly Services:</strong></span>
+            <span class="cic-line">🌅 Sunday Service — 10:00 AM</span>
+            <span class="cic-line">📖 Friday Bible Study &amp; Prayer — 6:00 PM</span>
+            <span class="cic-line" style="margin-top: var(--space-2);"><strong>Monthly:</strong></span>
+            <span class="cic-line">🌙 Jesus Night — Last Friday · 11:00 PM</span>
+            <span class="cic-line" style="margin-top: var(--space-2);"><strong>Email:</strong></span>
+            <span class="cic-line"><a href="mailto:contact@leaderschurchinternational.org">contact@leaderschurchinternational.org</a></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MAP ───────────────────────────────────────────────────── -->
+  <section class="lci-section-sm lci-section-gray map-section" aria-label="Church location map">
+    <div class="lci-container">
+      <div class="lci-map-wrap lci-reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.947960549588!2d-84.1402543252627!3d33.68441163706503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5ad19488ba819%3A0x20d05aa1e502503!2s6165%20Lakeside%20Cir%2C%20Stonecrest%2C%20GA%2030038%2C%20USA!5e0!3m2!1sen!2sng!4v1740760588490!5m2!1sen!2sng"
+          title="Leaders' Church International location on Google Maps"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BRANCH LOCATIONS ──────────────────────────────────────── -->
+  <section class="lci-section lci-section-white" id="branches" aria-labelledby="branches-heading">
+    <div class="lci-container">
+
+      <div class="lci-section-header lci-reveal">
+        <span class="lci-section-eyebrow">We Are Global</span>
+        <h2 class="lci-section-title" id="branches-heading">Our Branch Locations</h2>
+        <p class="lci-section-subtitle">Leaders' Church International is a growing global family. Find a branch near you and join us for worship.</p>
+      </div>
+
+      <div class="branches-grid">
+
+        <!-- Lagos -->
+        <div class="branch-card lci-reveal lci-reveal-delay-1">
+          <div class="branch-flag">🇳🇬</div>
+          <h3 class="branch-title">LCI Lagos</h3>
+          <div class="branch-details">
+            <div class="branch-detail-row">
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <span>Pastor Chris Daniels</span>
+            </div>
+            <div class="branch-detail-row">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:+2348033300344">+234 803 330 0344</a>
+            </div>
+            <div class="branch-detail-row">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>Idowu Akinsanya Street, by Iju Railway Station, Lagos, Nigeria</span>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Iju+Railway+Station+Lagos+Nigeria" target="_blank" rel="noopener"
+             class="lci-btn lci-btn-outline lci-btn-sm" style="align-self: flex-start;">
+            <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+
+        <!-- Pakistan -->
+        <div class="branch-card lci-reveal lci-reveal-delay-2">
+          <div class="branch-flag">🇵🇰</div>
+          <h3 class="branch-title">LCI Pakistan</h3>
+          <div class="branch-details">
+            <div class="branch-detail-row">
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <span>Pastor Fiaz Anwar</span>
+            </div>
+            <div class="branch-detail-row">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:+923007499529">+92 300 749 9529</a>
+            </div>
+            <div class="branch-detail-row">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>Mariam Sadiqa Town, Chan Da Qila, Gujranwala, Pakistan</span>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Chan+Da+Qila+Gujranwala+Pakistan" target="_blank" rel="noopener"
+             class="lci-btn lci-btn-outline lci-btn-sm" style="align-self: flex-start;">
+            <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+
+        <!-- Keffi -->
+        <div class="branch-card lci-reveal lci-reveal-delay-3">
+          <div class="branch-flag">🇳🇬</div>
+          <h3 class="branch-title">LCI Keffi</h3>
+          <div class="branch-details">
+            <div class="branch-detail-row">
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <span>Pastor Jacob Ola Jonah</span>
+            </div>
+            <div class="branch-detail-row">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:+2347026206008">+234 702 620 6008</a>
+            </div>
+            <div class="branch-detail-row">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>Akatiki Guest House, by NEPA Office GRA, Keffi, Nasarawa State, Nigeria</span>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=GRA+Keffi+Nasarawa+State+Nigeria" target="_blank" rel="noopener"
+             class="lci-btn lci-btn-outline lci-btn-sm" style="align-self: flex-start;">
+            <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+
+        <!-- Ibadan -->
+        <div class="branch-card lci-reveal lci-reveal-delay-1">
+          <div class="branch-flag">🇳🇬</div>
+          <h3 class="branch-title">LCI Ibadan — Hebron Tower</h3>
+          <div class="branch-details">
+            <div class="branch-detail-row">
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <span>Pastor Seun Babatunde</span>
+            </div>
+            <div class="branch-detail-row">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:+2347087882439">+234 708 788 2439</a>
+            </div>
+            <div class="branch-detail-row">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>Top Floor, Adjacent Mercified Event Place, Beside FRSC Office, Onireke, Dugbe, Ibadan, Oyo State, Nigeria</span>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Onireke+Dugbe+Ibadan+Nigeria" target="_blank" rel="noopener"
+             class="lci-btn lci-btn-outline lci-btn-sm" style="align-self: flex-start;">
+            <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+
+        <!-- Osogbo -->
+        <div class="branch-card lci-reveal lci-reveal-delay-2">
+          <div class="branch-flag">🇳🇬</div>
+          <h3 class="branch-title">LCI Osogbo</h3>
+          <div class="branch-details">
+            <div class="branch-detail-row">
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <span>Pastor Kenny OmoOba</span>
+            </div>
+            <div class="branch-detail-row">
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>Rock Eternal Model College Hall, Ofatedo Junction, Osogbo, Osun State, Nigeria</span>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Ofatedo+Junction+Osogbo+Osun+State+Nigeria" target="_blank" rel="noopener"
+             class="lci-btn lci-btn-outline lci-btn-sm" style="align-self: flex-start;">
+            <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+
+      </div><!-- /.branches-grid -->
+    </div>
+  </section>
+
+  <!-- ── CONTACT FORM + SIDEBAR ─────────────────────────────────── -->
+  <section class="lci-section lci-section-white" id="prayer" aria-labelledby="form-heading">
+    <div class="lci-container">
+      <div class="contact-main-grid">
+
+        <!-- FORM CARD -->
+        <div class="form-card lci-reveal">
+          <h2 class="form-card-title" id="form-heading">Send Us a Message</h2>
+          <p class="form-card-subtitle">For prayer requests, counselling, general enquiries, or to connect with our team — fill the form below and we'll respond promptly.</p>
+
+          <!-- Form type tabs -->
+          <div class="form-tab-nav" role="tablist" aria-label="Message type">
+            <button class="form-tab-btn active" data-form="general" role="tab" aria-selected="true">
+              <i class="fas fa-envelope" aria-hidden="true"></i> General Message
+            </button>
+            <button class="form-tab-btn" data-form="prayer" role="tab" aria-selected="false">
+              <i class="fas fa-hands-praying" aria-hidden="true"></i> Prayer Request
+            </button>
+          </div>
+
+          <!-- Status message -->
+          <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
+
+          <!-- General form -->
+          <form id="generalForm" action="contact.php" method="post" novalidate aria-label="General contact form">
+            <input type="hidden" name="form_type" value="general">
+            <div class="form-row">
+              <div class="lci-form-group">
+                <label class="lci-form-label" for="gen-name">Full Name <span aria-hidden="true" style="color:var(--color-error);">*</span></label>
+                <input type="text" id="gen-name" name="name" class="lci-form-input" placeholder="Your full name" required autocomplete="name" aria-required="true">
+              </div>
+              <div class="lci-form-group">
+                <label class="lci-form-label" for="gen-email">Email Address <span aria-hidden="true" style="color:var(--color-error);">*</span></label>
+                <input type="email" id="gen-email" name="email" class="lci-form-input" placeholder="your@email.com" required autocomplete="email" aria-required="true">
+              </div>
+            </div>
+            <div class="lci-form-group">
+              <label class="lci-form-label" for="gen-phone">Phone Number</label>
+              <input type="tel" id="gen-phone" name="phone" class="lci-form-input" placeholder="+1 000 000 0000" autocomplete="tel">
+            </div>
+            <div class="lci-form-group">
+              <label class="lci-form-label" for="gen-subject">Subject <span aria-hidden="true" style="color:var(--color-error);">*</span></label>
+              <input type="text" id="gen-subject" name="subject" class="lci-form-input" placeholder="How can we help you?" required aria-required="true">
+            </div>
+            <div class="lci-form-group">
+              <label class="lci-form-label" for="gen-message">Message <span aria-hidden="true" style="color:var(--color-error);">*</span></label>
+              <textarea id="gen-message" name="message" class="lci-form-textarea" placeholder="Tell us more…" required aria-required="true"></textarea>
+            </div>
+            <div class="lci-form-group">
+              <label class="lci-form-label" for="gen-security">Human Verification <span aria-hidden="true" style="color:var(--color-error);">*</span></label>
+              <div class="captcha-row">
+                <span class="captcha-label">1 + 6 = ?</span>
+                <input type="number" id="gen-security" name="security" class="lci-form-input" placeholder="Enter answer" required aria-required="true" min="0" max="99">
+              </div>
+            </div>
+            <button type="submit" class="lci-btn lci-btn-primary" style="width:100%; justify-content:center; padding: var(--space-4);">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+            </button>
+          </form>
+
+          <!-- Prayer Request form (hidden by default) -->
+          <form id="prayerForm" action="contact.php" method="post" novalidate style="display:none;" aria-label="Prayer request form">
+            <input type="hidden" name="form_type" value="prayer">
+            <div class="form-row">
+              <div class="lci-form-group">
+                <label class="lci-form-label" for="pr-name">Your Name <span aria-hidden="true" style="color:var(--color-error);">*</span></label>
+                <input type="text" id="pr-name" name="name" class="lci-form-input" placeholder="Your full name" required autocomplete="name" aria-required="true">
+              </div>
+              <div class="lci-form-group">
+                <label class="lci-form-label" for="pr-email">Email <span aria-hidden="true" style="color:var(--color-error);">*</span></label>
+                <input type="email" id="pr-email" name="email" class="lci-form-input" placeholder="your@email.com" required autocomplete="email" aria-required="true">
+              </div>
+            </div>
+            <div class="lci-form-group">
+              <label class="lci-form-label" for="pr-type">Prayer Category</label>
+              <select id="pr-type" name="prayer_type" class="lci-form-input lci-form-select">
+                <option value="">Select a category…</option>
+                <option value="healing">Healing &amp; Health</option>
+                <option value="family">Family &amp; Relationships</option>
+                <option value="finances">Finances &amp; Provision</option>
+                <option value="salvation">Salvation</option>
+                <option value="guidance">Direction &amp; Guidance</option>
+                <option value="deliverance">Deliverance</option>
+                <option value="thanksgiving">Thanksgiving</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="lci-form-group">
+              <label class="lci-form-label" for="pr-request">Your Prayer Request <span aria-hidden="true" style="color:var(--color-error);">*</span></label>
+              <textarea id="pr-request" name="message" class="lci-form-textarea" placeholder="Share your prayer need. Everything is kept confidential." required aria-required="true" rows="6"></textarea>
+            </div>
+            <div class="lci-form-group">
+              <label class="lci-form-label">
+                <input type="checkbox" name="anonymous" value="yes" style="margin-right: var(--space-2);">
+                Keep my name anonymous (prayer request only, no response needed)
+              </label>
+            </div>
+            <div class="lci-form-group">
+              <label class="lci-form-label" for="pr-security">Human Verification <span aria-hidden="true" style="color:var(--color-error);">*</span></label>
+              <div class="captcha-row">
+                <span class="captcha-label">3 + 4 = ?</span>
+                <input type="number" id="pr-security" name="security" class="lci-form-input" placeholder="Enter answer" required aria-required="true" min="0" max="99">
+              </div>
+            </div>
+            <button type="submit" class="lci-btn lci-btn-primary" style="width:100%; justify-content:center; padding: var(--space-4);">
+              <i class="fas fa-hands-praying" aria-hidden="true"></i> Submit Prayer Request
+            </button>
+          </form>
+
+        </div><!-- /.form-card -->
+
+        <!-- SIDEBAR -->
+        <aside class="contact-sidebar lci-reveal lci-reveal-delay-2" aria-label="Contact sidebar">
+
+          <!-- Service Times -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-card-title">
+              <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+              Service Times
+            </h3>
+            <div class="service-schedule">
+              <div class="service-row">
+                <span class="service-row-label">🌅 Sunday Service</span>
+                <span class="service-row-time">10:00 AM</span>
+              </div>
+              <div class="service-row">
+                <span class="service-row-label">📖 Friday Bible Study</span>
+                <span class="service-row-time">6:00 PM</span>
+              </div>
+              <div class="service-row">
+                <span class="service-row-label">🙏 Friday Prayer Meeting</span>
+                <span class="service-row-time">6:00 PM</span>
+              </div>
+              <div class="service-row">
+                <span class="service-row-label">🌙 Jesus Night</span>
+                <span class="service-row-time">Last Fri · 11 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Call -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-card-title">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              Call Us Directly
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+              <a href="tel:+12404864078" class="lci-btn lci-btn-primary lci-btn-sm" style="justify-content: flex-start; gap: var(--space-3);">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>
+                  <span style="display:block; font-size: var(--text-xs); opacity:0.75; text-transform:uppercase; letter-spacing:0.06em;">USA</span>
+                  +1 240-486-4078
+                </span>
+              </a>
+              <a href="tel:+14709028204" class="lci-btn lci-btn-outline lci-btn-sm" style="justify-content: flex-start; gap: var(--space-3);">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>
+                  <span style="display:block; font-size: var(--text-xs); opacity:0.75; text-transform:uppercase; letter-spacing:0.06em;">USA</span>
+                  +1 470-902-8204
+                </span>
+              </a>
+              <a href="tel:+2348133494804" class="lci-btn lci-btn-outline lci-btn-sm" style="justify-content: flex-start; gap: var(--space-3);">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>
+                  <span style="display:block; font-size: var(--text-xs); opacity:0.75; text-transform:uppercase; letter-spacing:0.06em;">Nigeria</span>
+                  +234 8133494804
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Social Connect -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-card-title">
+              <i class="fas fa-share-alt" aria-hidden="true"></i>
+              Connect Online
+            </h3>
+            <div class="social-connect-grid">
+              <a href="https://web.facebook.com/Leaders-Church-International-101252804654265/" target="_blank" rel="noopener" class="social-connect-btn fb" aria-label="Like us on Facebook">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook
+              </a>
+              <a href="https://www.youtube.com/channel/UC1tdE0iSOtPHIXh1OzLOnyA" target="_blank" rel="noopener" class="social-connect-btn yt" aria-label="Watch us on YouTube">
+                <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
+              </a>
+              <a href="https://twitter.com/israel_eledan" target="_blank" rel="noopener" class="social-connect-btn tw" aria-label="Follow us on Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i> Twitter
+              </a>
+              <a href="https://instagram.com/israeleledan" target="_blank" rel="noopener" class="social-connect-btn ig" aria-label="Follow us on Instagram">
+                <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
+              </a>
+              <a href="https://www.linkedin.com/in/apostle-Israel-eledan-39837314/" target="_blank" rel="noopener" class="social-connect-btn li" aria-label="Connect on LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+              </a>
+              <a href="mailto:contact@leaderschurchinternational.org" class="social-connect-btn em" aria-label="Email us">
+                <i class="fas fa-envelope" aria-hidden="true"></i> Email Us
+              </a>
+            </div>
+          </div>
+
+        </aside>
+      </div><!-- /.contact-main-grid -->
+    </div>
+  </section>
+
+  <!-- ── ONLINE GIVING SECTION ──────────────────────────────────── -->
+  <section style="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)); padding: var(--space-20) 0; position: relative; overflow: hidden;" id="give" aria-labelledby="giving-heading">
+    <div style="position:absolute; right:-80px; top:-80px; width:320px; height:320px; border-radius:50%; background:rgba(201,162,39,0.1); pointer-events:none;"></div>
+    <div style="position:absolute; left:-60px; bottom:-60px; width:240px; height:240px; border-radius:50%; background:rgba(255,255,255,0.04); pointer-events:none;"></div>
+    <div class="lci-container" style="position: relative; z-index: 1; text-align: center;">
+      <span class="lci-section-eyebrow" style="color: var(--color-accent-light); justify-content: center;">Partner with the Vision</span>
+      <h2 id="giving-heading" style="font-family: var(--font-display); font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl)); color: var(--color-white); margin: var(--space-3) 0 var(--space-4);">Online Giving &amp; Tithes</h2>
+      <p style="font-size: var(--text-xl); font-style: italic; font-family: var(--font-serif); color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 640px; margin: 0 auto var(--space-4);">"The Lord will make His Grace Overflow to you that you may have all sufficiency to respond to every good work."</p>
+      <p style="font-size: var(--text-sm); color: var(--color-accent-light); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-8);">2 Corinthians 9:8</p>
+      <div style="display: inline-flex; flex-direction: column; align-items: center; gap: var(--space-4);">
+        <a href="mailto:contact@leaderschurchinternational.org?subject=Online%20Giving%20Inquiry" class="lci-btn lci-btn-gold lci-btn-lg">
+          <i class="fas fa-hand-holding-heart"></i> Make a Donation
+        </a>
+        <p style="color: rgba(255,255,255,0.6); font-size: var(--text-sm); margin: 0;">Contact us to set up electronic giving or for bank transfer details.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer class="lci-footer">
+  <div class="lci-container">
+    <div class="lci-footer-grid">
+      <div class="lci-footer-brand">
+        <a href="index.html" class="lci-footer-logo">
+          <img src="assets/images/lci-logo.svg" alt="LCI Logo" class="lci-footer-logo-img">
+          <div class="lci-footer-logo-text">
+            <span class="name">Leaders' Church International</span>
+            <span class="tagline">Citadel of Peace &amp; Righteousness</span>
+          </div>
+        </a>
+        <p class="lci-footer-desc">A multi-ethnic, globally-diverse church community built on faith, purpose, and the enduring love of Christ.</p>
+        <div class="lci-social-links">
+          <a href="https://web.facebook.com/Leaders-Church-International-101252804654265/" target="_blank" rel="noopener" class="lci-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/israeleledan" target="_blank" rel="noopener" class="lci-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/israel_eledan" target="_blank" rel="noopener" class="lci-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com/channel/UC1tdE0iSOtPHIXh1OzLOnyA" target="_blank" rel="noopener" class="lci-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="lci-footer-heading">Quick Links</h3>
+        <ul class="lci-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About LCI</a></li>
+          <li><a href="pastors.html">Pastors' Corner</a></li>
+          <li><a href="media.html">Sermons &amp; Media</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="lci-footer-heading">Ministries</h3>
+        <ul class="lci-footer-links">
+          <li><a href="about.html#ministries">Family Caring Fellowship</a></li>
+          <li><a href="about.html#ministries">Valiant Men International</a></li>
+          <li><a href="about.html#ministries">Women Aflame International</a></li>
+          <li><a href="about.html#ministries">Favored Singles</a></li>
+          <li><a href="about.html#ministries">Vibrant Youth International</a></li>
+          <li><a href="about.html#ministries">Intercessory Prayer Ministry</a></li>
+          <li><a href="about.html#ministries">Prophetic Evangelism</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="lci-footer-heading">Contact</h3>
+        <div class="lci-footer-contact-item"><span class="lci-footer-contact-icon"><i class="fas fa-map-marker-alt"></i></span><span>6165 Lakeside Circle, Lithonia, GA 30038, USA</span></div>
+        <div class="lci-footer-contact-item"><span class="lci-footer-contact-icon"><i class="fas fa-phone"></i></span><span>USA: +1 240-486-4078 / +1 470-902-8204</span></div>
+        <div class="lci-footer-contact-item"><span class="lci-footer-contact-icon"><i class="fas fa-phone-alt"></i></span><span>Nigeria: +234 8133494804</span></div>
+        <div class="lci-footer-contact-item"><span class="lci-footer-contact-icon"><i class="fas fa-envelope"></i></span><a href="mailto:contact@leaderschurchinternational.org" style="color: var(--color-accent-light); text-decoration: none;">contact@leaderschurchinternational.org</a></div>
+      </div>
+    </div>
+    <hr class="lci-footer-divider">
+    <div class="lci-footer-bottom">
+      <p class="lci-footer-copyright">&copy; 2026 <a href="index.html">Leaders' Church International</a>. All rights reserved.</p>
+      <span style="font-size: var(--text-xs); color: rgba(255,255,255,0.35);">Thank you for visiting LCI's website. God bless you!</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="lci-back-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></a>
+
+<script>
+(function() {
+  // Theme
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon   = document.getElementById('themeIcon');
+  const savedTheme  = localStorage.getItem('lci-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  themeToggle.addEventListener('click', function() {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('lci-theme', next);
+    themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  });
+
+  // Header scroll
+  const header = document.getElementById('lci-header');
+  window.addEventListener('scroll', function() { header.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+
+  // Mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav  = document.getElementById('mobileNav');
+  menuToggle.addEventListener('click', function() {
+    const isOpen = mobileNav.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileNav.setAttribute('aria-hidden', String(!isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileNav.classList.remove('open'); menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false'); mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Form tabs
+  const formTabBtns  = document.querySelectorAll('.form-tab-btn');
+  const generalForm  = document.getElementById('generalForm');
+  const prayerForm   = document.getElementById('prayerForm');
+  const formMessage  = document.getElementById('formMessage');
+
+  formTabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      formTabBtns.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      this.classList.add('active'); this.setAttribute('aria-selected','true');
+      formMessage.style.display = 'none';
+      if (this.getAttribute('data-form') === 'prayer') {
+        generalForm.style.display = 'none';
+        prayerForm.style.display  = 'block';
+      } else {
+        prayerForm.style.display  = 'none';
+        generalForm.style.display = 'block';
+      }
+    });
+  });
+
+  // Check if URL has #prayer hash to auto-switch tab
+  if (window.location.hash === '#prayer') {
+    formTabBtns[1] && formTabBtns[1].click();
+  }
+
+  // Form submission (client-side validation + feedback)
+  function handleFormSubmit(form, captchaAnswer) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const security = parseInt(form.querySelector('[name="security"]').value, 10);
+      if (security !== captchaAnswer) {
+        showFormMessage('error', 'Incorrect answer to the verification question. Please try again.');
+        return;
+      }
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+
+      // Simulate submission (in production, replace with fetch to contact.php)
+      setTimeout(function() {
+        showFormMessage('success', 'Thank you! Your message has been received. We\'ll be in touch soon. God bless you!');
+        form.reset();
+        btn.disabled = false;
+        btn.innerHTML = form.id === 'generalForm'
+          ? '<i class="fas fa-paper-plane"></i> Send Message'
+          : '<i class="fas fa-hands-praying"></i> Submit Prayer Request';
+      }, 1500);
+    });
+  }
+
+  function showFormMessage(type, text) {
+    formMessage.className = 'form-message ' + type;
+    formMessage.textContent = text;
+    formMessage.style.display = 'block';
+    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  handleFormSubmit(generalForm, 7);  // 1+6=7
+  handleFormSubmit(prayerForm,  7);  // 3+4=7
+
+  // Back to top
+  const backTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() { backTop.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
+  backTop.addEventListener('click', function(e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.lci-reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { io.observe(el); });
+  } else { reveals.forEach(function(el) { el.classList.add('revealed'); }); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "../../../../../www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="../../../../../www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="84px" height="90px" viewBox="0 0 84 90" enable-background="new 0 0 84 90" xml:space="preserve">
+	<defs>
+		<mask id="twitter_mask" maskUnits="objectBoundingBox">
+			<path fill="#FFFFFF" d="M84,3.1C84,1,83,0,81,0H3C1,0,0,1,0,3.1v78C0,83,1,84,3,84h59l6,6l6-6h7c2,0,3-1,3-2.9V3.1z"/>
+		</mask>
+	</defs>
+<g>
+	<path d="M84,3.1C84,1,83,0,81,0H3C1,0,0,1,0,3.1v78C0,83,1,84,3,84h59l6,6l6-6h7c2,0,3-1,3-2.9V3.1z"/>
+</g>
+</svg>

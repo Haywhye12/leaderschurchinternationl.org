@@ -1,0 +1,431 @@
+body .content-wrapper {
+	background: #f9f4ed;
+}
+
+a:hover, a:focus {
+	color: #ff920c;
+}
+a.h1:hover, a.h2:hover, a.h3:hover, a.h4:hover, a.h5:hover, a.h6:hover {
+	color: #ff920c;
+}
+abbr {
+	color: #ff920c;
+}
+mark {
+	background-color: #ff920c;
+}
+mark.light {
+	background-color: #ff920c;
+}
+abbr[title], abbr[data-original-title] {
+	border-bottom: 1px dotted #ff920c;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[1.1]	COMMON LIST STYLE - UL common classes
+/ -------------------------------------------------------------------------------- */
+ul.toggle > li > a:hover {
+	color: #ff920c;
+}
+ul.list-fqa > li > a:hover:before {
+	color: #ff920c;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[2]	COMMON CLASS
+/ -------------------------------------------------------------------------------- */
+.text-primary {
+	color: #ff920c;
+}
+.title-primary:after {
+	background-color: #ff920c;
+}
+
+.avatar-circle {
+	border: 10px solid #ff920c;
+}
+
+.by-author a:hover {
+	color: #ff920c;
+}
+
+.badge-circle {
+	background-color: #ff920c;
+}
+.border-top {
+	border-top: 2px solid #ff920c;
+}
+.border-top {
+	border-top-color: #ff920c;
+}
+
+.overlay-inner .glyphicon, .overlay-hover .glyphicon {
+	background-color: #ff920c;
+}
+
+.thumbnail:hover .overlay-hover {
+	border-color: #ff920c;
+}
+.thumbnail:hover .border-inner {
+	border-color: #ff920c;
+}
+.thumbnail .caption:before {
+	background-color: #ff920c;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[3]	RESET BOOTSTRAP CLASS
+/ -------------------------------------------------------------------------------- */
+.btn-default {
+	background-color: #ff920c;
+	border-color: #ff920c;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+	background-color: #ff920c;
+	border-color: #ff920c;
+}
+.btn-up {
+	background-color: #ff920c;
+}
+.input-group .btn.input-addon:hover {
+	background-color: #ff920c;
+}
+.input-group .form-control:focus + .btn.input-addon:hover {
+	border-color: #ff920c;
+}
+.form-control:focus {
+	border: 1px solid #ff920c;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[4]	SHORTCODES
+/ -------------------------------------------------------------------------------- */
+/* dropcap */
+.dropcap {
+	color: #ff920c;
+}
+/* progress bar */
+.progress .progress-bar {
+	background-color: #ff920c;
+	color: #ff920c;
+}
+.progress-overall .progress-rotate {
+	background-color: #ff920c;
+}
+.progress-overall .progress-overall-content {
+	background-color: #f6f5f2;
+}
+
+/* tabs */
+.tabs-wrapper .nav-tabs > li.active > a, 
+.tabs-wrapper .nav-tabs > li.active > a:hover, 
+.tabs-wrapper .nav-tabs > li.active > a:focus {
+	background-color: #ff920c;
+}
+.tabs-wrapper .nav-tabs > li > a:hover {
+	color: #ff920c;
+}
+.tab-content [data-toggle="collapse"] {
+	background-color: #ff920c;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[5.7] PRICING TABLE - STYLES	
+/ -------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- /
+	PRICING TABLE - STYLE 1
+/ -------------------------------------------------------------------------------- */
+
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 { background:#FFF; }
+	
+	/***** header *****/
+	.gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go:hover .gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header-top { 
+		background:#ff920c;
+	}
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-header-top,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header-top { background:#fff;}
+	
+	/* column default state */
+	.gw-go-col.gw-go-style1 .gw-go-header h3,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header h3 { color:#fff; }
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-header h3,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-header h3,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-header h3 { color:#ff920c; }
+	.gw-go-col.gw-go-style1 .gw-go-coinf, 
+	.gw-go-col.gw-go-style1 .gw-go-coinb { background: #fff;}
+
+	.gw-go-col.gw-go-style1 .gw-go-coinf div, 
+	.gw-go-col.gw-go-style1 .gw-go-coinb div { color:#ff920c; }
+	.gw-go-col.gw-go-style1 .gw-go-coinf small, 
+	.gw-go-col.gw-go-style1 .gw-go-coinb small { color:#585858; }	
+	
+	/***** details *****/
+	/* column default state */
+	.gw-go-col.gw-go-style1 .gw-go-body,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body { border-bottom-color:#FFF; }
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style1 .gw-go-body { border-bottom-color:#8d6f3e; }	
+	/* column default state */
+	.gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style1 .gw-go-body li { 
+		border-top-color:#FFF;
+		color:#333;
+	}
+	.gw-go .gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body li,
+	.gw-go:hover .gw-go-col-wrap:hover .gw-go-col.gw-go-style1 .gw-go-body li {
+		color: #ff920c;
+	}
+	
+	/***** footer *****/
+	
+/* -------------------------------------------------------------------------------- /
+	PRICING TABLE - STYLE 2
+/ -------------------------------------------------------------------------------- */
+
+	/* column default state */
+	.gw-go-col.gw-go-style2,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 { background:#FFF; }
+
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 { 
+		background:#ff920c; 
+	}
+	
+	/***** header *****/
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-header-top,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header-top { 
+		background:#FFF;
+ }	
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-header-bottom,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header-bottom { 
+		background:#FFF;
+	}	
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-header h3,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header h3 { color:#ff920c; }
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-header h3,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-header h3,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-header h3 { color:#FFF; }
+
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb	{ 
+		border:solid 10px #ff920c;
+		background:#ff920c;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb div { 
+		background:transparent;
+		color: #fff;
+	}
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinf,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinf,	
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb { 
+		background: #fff;
+	}	
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinf div,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinf div,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinf div,	
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb div,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb div { 
+		background:transparent;
+		color:#ff920c;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-coinb small,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-coinb small { color:#313131; }
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-coinb small { color:#fff; }
+	
+	/* column default state */
+	.gw-go-col.gw-go-style2 .gw-go-body li,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-body li {
+		background:#ddd4c7;
+		color:#333;
+	}
+	.gw-go-col.gw-go-style2 .gw-go-body li.gw-go-even,
+	.gw-go:hover .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-body li.gw-go-even { background:#fff; }	
+	/* column hover / selected state */
+	.gw-go-col-wrap:hover .gw-go-col.gw-go-style2 .gw-go-body li,
+	.gw-go .gw-go-col-wrap.gw-go-current .gw-go-col.gw-go-style2 .gw-go-body li,	
+	.gw-go:hover .gw-go-col-wrap.gw-go-current:hover .gw-go-col.gw-go-style2 .gw-go-body li {
+		background:none;
+		border-top-color:#FFF;
+		color:#FFF;
+	}	
+
+/* -------------------------------------------------------------------------------- /
+	[6]	MENU
+/ -------------------------------------------------------------------------------- */
+.navbar-default {
+	background-color: #ff920c;
+	border-color: #bf3e11;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+	background-color: #ff920c;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+	background-color: #ff920c;
+}
+
+.sf-menu > li > a:before {
+	background-color: #ff920c;
+}
+.sf-menu li {
+	background: #ff920c;
+}
+.sf-menu li:hover, .sf-menu li.sfHover {
+	background: #ff920c;
+}
+.sf-menu ul li {
+	background: #ff920c;
+}
+.sf-menu ul ul li {
+	background: #ff920c;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[7.1]	JPLAYER
+/ -------------------------------------------------------------------------------- */
+a.jp-play {
+	background: #ff920c url("../images/icons/player_red.png") 6px 8px no-repeat;
+}
+a.jp-play:hover {
+	background: #ff920c url("../images/icons/player_red.png") -27px 8px no-repeat;
+}
+a.jp-pause {
+	background: #ff920c url("../images/icons/player_red.png") 6px -22px no-repeat;
+}
+a.jp-pause:hover {
+	background: #ff920c url("../images/icons/player_red.png") -27px -22px no-repeat;
+}
+a.jp-play, a.jp-pause {
+	background-color: #ff920c;
+}
+div.jp-play-bar {
+	background: #ff920c;
+}
+div.jp-volume-bar-value {
+	background: #ff920c;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[9.1]	FLEXSLIDER
+/ -------------------------------------------------------------------------------- */
+.flex-direction-nav a {
+	background-color: #ff920c;
+}
+.flex-direction-nav .flex-prev {
+	background: #ff920c url('../images/icons/image_slider_prev.png') no-repeat center center;
+}
+.flex-direction-nav .flex-next {
+	background: #ff920c url('../images/icons/image_slider_next.png') no-repeat center center;
+}
+
+.single-wrap .media-wrap:not(.no-frame):after {
+	background-color: #ff920c;
+}
+.single-wrap:hover .overlay-hover {
+	border-color: #ff920c;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[10]	SLIDER REVOLUTION
+/ -------------------------------------------------------------------------------- */
+.tparrows {
+	background-color: #ff920c;
+}
+.tp-rightarrow.default {
+	background: #ff920c url('../images/icons/slider_next.png') no-repeat 0 0;
+}
+.tp-leftarrow.default {
+	background: #ff920c url('../images/icons/slider_prev.png') no-repeat 0 0;
+}
+.tparrows:hover {
+	background-color: #ffffff;
+}
+
+.tp-caption.slider-title-quote {
+	border-left: 5px solid #ff920c;
+	color: #ff920c;
+}
+.tp-caption.slider-title-you-long {
+	border-left: 5px solid #ff920c;
+	color: #ff920c;
+}
+.tp-caption.slider-title-simple {
+	color: #ff920c;
+}
+.tp-caption.slider-title-quote-short {
+	border-left: 5px solid #ff920c;
+	color: #ff920c;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[12]	CONTENT
+/ -------------------------------------------------------------------------------- */
+.ourmission {
+	background-color: #ff920c;
+}
+
+.calendar_wrap thead th:last-child {
+	color: #ff920c;
+}
+.calendar_wrap tbody a {
+	background: #ff920c;
+}
+.social-icon:hover {
+	background-color: #ff920c;
+	border-color: #ff920c;
+}
+
+/*twitter*/
+.twitter-wrap a:not(.btn), .twitter-wrap a:not(.btn):visited {
+	color: #ff920c;
+}
+
+/* -------------------------------------------------------------------------------- /
+	[13]	SPECIAL CONTENT - Some special content for only html version
+/ -------------------------------------------------------------------------------- */
+#header .logo-wrap img {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: url('../../content/home/logo_orange.png') no-repeat;
+	width: 94px;
+	height: 67px;
+	padding-left: 94px;
+}
+.slider-avatar img {	
+	content: url('../../content/slides/1/man_orange.png');
+}
+.ad_widget {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: url('../../content/ad_widget/woman_orange.png') no-repeat;
+	width: 192px;
+	height: 235px;
+	padding-left: 192px;
+}
