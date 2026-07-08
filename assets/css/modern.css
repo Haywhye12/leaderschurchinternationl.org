@@ -446,6 +446,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .lci-section-white { background: var(--color-white); }
 .lci-section-gray  { background: linear-gradient(180deg, #f5f3ff 0%, #f4f4f5 100%); }
+
+[data-theme="dark"] .lci-section-white { background: var(--color-gray-100); }
+[data-theme="dark"] .lci-section-gray  { background: var(--color-gray-200); }
 .lci-section-warm  { background: var(--color-warm-50); }
 
 /* ── Section Headers ─────────────────────────────────────────── */
@@ -490,6 +493,7 @@ img { max-width: 100%; height: auto; display: block; }
   max-width: 620px; margin: 0 auto; line-height: 1.75;
 }
 .lci-section-dark .lci-section-subtitle { color: rgba(255,255,255,0.72); }
+[data-theme="dark"] .lci-section-subtitle { color: var(--color-gray-500); }
 
 /* ── Page Hero / Banner ──────────────────────────────────────── */
 /* ═══════════════════════════════════════════════════════════
@@ -702,6 +706,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 [data-theme="dark"] .lci-card-title { color: var(--color-gray-100); }
 .lci-card-text { font-size: var(--text-base); color: var(--color-gray-600); flex: 1; line-height: 1.7; }
+[data-theme="dark"] .lci-card-text { color: var(--color-gray-500); }
 
 /* ── Ministry Cards ──────────────────────────────────────────── */
 .lci-ministry-card {
@@ -754,6 +759,7 @@ img { max-width: 100%; height: auto; display: block; }
 .lci-ministry-card:hover .lci-ministry-title { color: var(--color-primary); }
 [data-theme="dark"] .lci-ministry-title { color: var(--color-gray-100); }
 .lci-ministry-desc { font-size: var(--text-sm); color: var(--color-gray-600); line-height: 1.75; }
+[data-theme="dark"] .lci-ministry-desc { color: var(--color-gray-500); }
 
 /* ── Stats Section ───────────────────────────────────────────── */
 .lci-stats-grid {
@@ -869,6 +875,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .lci-pastor-body { padding: var(--space-6); flex: 1; }
 .lci-pastor-bio { font-size: var(--text-base); color: var(--color-gray-600); line-height: 1.75; }
+[data-theme="dark"] .lci-pastor-bio { color: var(--color-gray-500); }
 
 /* ── Video Cards ─────────────────────────────────────────────── */
 .lci-video-card {
@@ -970,6 +977,11 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: var(--font-serif); font-size: var(--text-xl); font-style: italic;
   color: var(--color-gray-800); line-height: 1.7; margin: 0 0 var(--space-3); border: none;
 }
+[data-theme="dark"] .lci-quote-block blockquote { color: var(--color-gray-300); }
+[data-theme="dark"] .lci-quote-block {
+  background: linear-gradient(135deg, rgba(129,140,248,0.08), rgba(251,191,36,0.06));
+  border-image: linear-gradient(180deg, #818cf8, #a5b4fc, #fbbf24) 1;
+}
 .lci-quote-block cite {
   font-size: var(--text-sm); font-weight: 700;
   background: linear-gradient(135deg, #3730a3, #6366f1);
@@ -987,6 +999,7 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.65; max-width: 700px; margin: 0 auto var(--space-4);
 }
 .lci-section-dark .lci-verse-text { color: rgba(255,255,255,0.9); }
+[data-theme="dark"] .lci-verse-text { color: var(--color-gray-700); }
 .lci-verse-ref {
   display: inline-block;
   font-size: var(--text-sm); font-weight: 700;
@@ -1260,6 +1273,29 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .lci-gold-text  { color: var(--color-accent); }
 
+/*
+ * Use these classes instead of style="color: var(--color-white)" on headings
+ * inside dark sections — var(--color-white) remaps to near-black in dark mode.
+ */
+.lci-heading-white {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+}
+.lci-subtitle-white {
+  color: rgba(255,255,255,0.78) !important;
+}
+/* Stats section heading inside lci-section-dark */
+.lci-stat-heading {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+}
+
 /* Skip link */
 .lci-skip-link {
   position: absolute; top: -40px; left: var(--space-4);
@@ -1490,7 +1526,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex; align-items: center; justify-content: center;
   gap: var(--space-10); flex-wrap: wrap;
 }
-.service-strip-item { display: flex; align-items: center; gap: var(--space-3); color: var(--color-white); }
+.service-strip-item { display: flex; align-items: center; gap: var(--space-3); color: #ffffff; }
 .service-strip-icon {
   width: 42px; height: 42px;
   background: rgba(245,158,11,0.14); border: 1px solid rgba(245,158,11,0.25);
@@ -1502,7 +1538,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: rgba(245,158,11,0.28); transform: scale(1.12) rotate(-5deg);
 }
 .service-strip-label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.52); font-weight: 600; display: block; }
-.service-strip-value { font-size: var(--text-base); font-weight: 700; color: var(--color-white); display: block; line-height: 1.2; transition: color 0.2s ease; }
+.service-strip-value { font-size: var(--text-base); font-weight: 700; color: #ffffff; display: block; line-height: 1.2; transition: color 0.2s ease; }
 .service-strip-item:hover .service-strip-value { color: var(--color-accent-light); }
 
 /* ── Loading Screen ──────────────────────────────────────────── */
@@ -1628,6 +1664,7 @@ img { max-width: 100%; height: auto; display: block; }
 .mini-card-title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; color: var(--color-gray-900); margin: 0 0 var(--space-2); }
 [data-theme="dark"] .mini-card-title { color: var(--color-gray-100); }
 .mini-card-desc { font-size: var(--text-sm); color: var(--color-gray-600); line-height: 1.65; margin-bottom: var(--space-4); }
+[data-theme="dark"] .mini-card-desc { color: var(--color-gray-500); }
 [data-theme="dark"] .mini-card { background: var(--color-gray-200); border-color: var(--color-gray-300); }
 
 /* Audio section bg */
@@ -1647,6 +1684,9 @@ img { max-width: 100%; height: auto; display: block; }
   padding: var(--space-16) var(--space-6);
   position: relative; overflow: hidden;
 }
+[data-theme="dark"] .vision-strip {
+  background: linear-gradient(180deg, var(--color-gray-200) 0%, var(--color-gray-100) 100%);
+}
 .vision-strip::before {
   content: ''; position: absolute; left: 0; top: 0; right: 0; bottom: 0;
   background: radial-gradient(ellipse at 50% 100%, rgba(55,48,163,0.05), transparent 70%);
@@ -1662,6 +1702,7 @@ img { max-width: 100%; height: auto; display: block; }
 .vision-title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; color: var(--color-gray-900); margin: 0 0 var(--space-3); position: relative; }
 [data-theme="dark"] .vision-title { color: var(--color-gray-100); }
 .vision-desc { font-size: var(--text-sm); color: var(--color-gray-600); line-height: 1.8; }
+[data-theme="dark"] .vision-desc { color: var(--color-gray-500); }
 
 /* Giving section */
 .giving-section {
@@ -1671,7 +1712,7 @@ img { max-width: 100%; height: auto; display: block; }
 .giving-section::before { content: ''; position: absolute; right:-80px; top:-80px; width:320px; height:320px; border-radius:50%; background: radial-gradient(circle, rgba(245,158,11,0.18) 0%, rgba(249,115,22,0.08) 60%, transparent 80%); animation: orbDrift 10s ease-in-out infinite; }
 .giving-section::after  { content: ''; position: absolute; left:-60px; bottom:-60px; width:240px; height:240px; border-radius:50%; background: radial-gradient(circle, rgba(6,182,212,0.12) 0%, rgba(99,102,241,0.06) 60%, transparent 80%); animation: orbDrift 8s ease-in-out infinite reverse; }
 .giving-inner { max-width: var(--container-max); margin: 0 auto; display: grid; grid-template-columns:1fr 1fr; gap: var(--space-12); align-items:center; position: relative; z-index:1; }
-.giving-text h2 { font-family: var(--font-display); font-size: clamp(var(--text-2xl),3vw,var(--text-4xl)); color: var(--color-white); margin: 0 0 var(--space-4); }
+.giving-text h2 { font-family: var(--font-display); font-size: clamp(var(--text-2xl),3vw,var(--text-4xl)); color: #ffffff; margin: 0 0 var(--space-4); }
 .giving-text p { font-size: var(--text-lg); color: rgba(255,255,255,0.82); font-style:italic; font-family: var(--font-serif); line-height:1.7; margin-bottom: var(--space-4); }
 .giving-verse-ref { font-size: var(--text-sm); color: var(--color-accent-light); font-weight:700; letter-spacing:0.06em; }
 .giving-quote {
@@ -1713,6 +1754,11 @@ img { max-width: 100%; height: auto; display: block; }
   background: linear-gradient(135deg, rgba(55,48,163,0.06), rgba(245,158,11,0.06));
   border: 1px solid rgba(55,48,163,0.12); border-left: 4px solid var(--color-primary);
   border-radius: var(--radius-xl); padding: var(--space-8);
+}
+[data-theme="dark"] .creed-box {
+  background: linear-gradient(135deg, rgba(129,140,248,0.08), rgba(251,191,36,0.06));
+  border-color: rgba(129,140,248,0.2);
+  border-left-color: var(--color-primary);
 }
 .creed-box blockquote { font-family: var(--font-serif); font-size: var(--text-lg); font-style:italic; color: var(--color-gray-800); line-height:1.8; margin:0 0 var(--space-4); border:none; padding:0; }
 [data-theme="dark"] .creed-box blockquote { color: var(--color-gray-300); }
@@ -1775,7 +1821,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-align: center; position: relative; overflow: hidden;
 }
 .prayer-cta::before { content: '✝'; position: absolute; font-size: 14rem; font-weight: 100; color: rgba(255,255,255,0.025); top: -40px; left: 50%; transform: translateX(-50%); font-family: var(--font-serif); pointer-events: none; }
-.prayer-cta h2 { font-family: var(--font-display); font-size: clamp(var(--text-2xl),3vw,var(--text-4xl)); color: var(--color-white); margin: 0 0 var(--space-4); }
+.prayer-cta h2 { font-family: var(--font-display); font-size: clamp(var(--text-2xl),3vw,var(--text-4xl)); color: #ffffff; margin: 0 0 var(--space-4); }
 .prayer-cta p { color: rgba(255,255,255,0.82); font-size: var(--text-lg); font-style:italic; font-family: var(--font-serif); max-width: 540px; margin: 0 auto var(--space-8); line-height:1.7; }
 
 /* ── Media page specifics ────────────────────────────────────── */
@@ -1827,6 +1873,7 @@ img { max-width: 100%; height: auto; display: block; }
 .video-card-title { font-weight: 700; font-size: var(--text-sm); color: var(--color-gray-800); margin-bottom: var(--space-1); }
 [data-theme="dark"] .video-card-title { color: var(--color-gray-200); }
 .video-card-meta { font-size: var(--text-xs); color: var(--color-gray-500); text-transform: uppercase; letter-spacing: 0.06em; }
+[data-theme="dark"] .video-card-meta { color: var(--color-gray-400); }
 .yt-cta {
   background: linear-gradient(135deg, #b91c1c 0%, #ef4444 50%, #f97316 100%);
   border-radius: var(--radius-xl); padding: var(--space-10);
@@ -1836,7 +1883,7 @@ img { max-width: 100%; height: auto; display: block; }
   transition: all var(--transition-spring);
   text-decoration: none;
 }
-.yt-cta:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 20px 56px rgba(255,0,0,0.38); text-decoration: none; color: var(--color-white); }
+.yt-cta:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 20px 56px rgba(255,0,0,0.38); text-decoration: none; color: #ffffff; }
 .yt-cta-icon { font-size: 3.5rem; }
 .yt-cta-title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; }
 .yt-cta-sub { font-size: var(--text-base); opacity: 0.88; }
@@ -1912,20 +1959,56 @@ img { max-width: 100%; height: auto; display: block; }
   background-clip: unset !important;
 }
 
-/* giving-section plain h2 (index.html) — not .lci-section-title class */
+/* giving-section plain h2 (index.html) — not .lci-section-title class — see below */
+/* prayer-cta h2 (pastors.html) — see below */
+
+/* ── Dark-section subtitle + eyebrow permanent white overrides ── */
+/* These sections always have dark backgrounds — subtitles must stay
+   white regardless of the dark-mode token remapping */
+.lci-section-dark .lci-section-subtitle,
+.audio-section-bg .lci-section-subtitle,
+.lci-cta-strip .lci-section-subtitle,
+.giving-section .lci-section-subtitle,
+.prayer-cta .lci-section-subtitle,
+.lci-section[style*="background"] .lci-section-subtitle {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+/* Eyebrows on class-based dark sections (not just inline-style ones) */
+.audio-section-bg .lci-section-eyebrow,
+.lci-cta-strip .lci-section-eyebrow,
+.giving-section .lci-section-eyebrow,
+.prayer-cta .lci-section-eyebrow,
+.lci-section[style*="background"] .lci-section-eyebrow {
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 60%, #fcd34d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fbbf24;
+}
+.audio-section-bg .lci-section-eyebrow::before,
+.audio-section-bg .lci-section-eyebrow::after,
+.lci-cta-strip .lci-section-eyebrow::before,
+.lci-cta-strip .lci-section-eyebrow::after,
+.giving-section .lci-section-eyebrow::before,
+.giving-section .lci-section-eyebrow::after {
+  background: linear-gradient(90deg, #fbbf24, #f97316);
+}
+
+/* yt-cta hover color: var(--color-white) remaps to dark in dark mode — use literal */
+.yt-cta:hover { color: #ffffff !important; }
+
+/* lci-subtitle-white utility: always readable on dark bg */
+.lci-subtitle-white { color: rgba(255, 255, 255, 0.78) !important; }
+
+/* giving/prayer heading uses var(--color-white) in CSS which remaps dark — fix */
 .giving-section h2,
-.giving-text h2 {
-  color: var(--color-white) !important;
-  -webkit-text-fill-color: var(--color-white) !important;
-}
-
-/* prayer-cta h2 (pastors.html) */
+.giving-text h2,
 .prayer-cta h2 {
-  color: var(--color-white) !important;
-  -webkit-text-fill-color: var(--color-white) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
-/* ── Responsive ──────────────────────────────────────────────── */
 /* ── Responsive ──────────────────────────────────────────────── */
 
 /* Tablet (≤1024px) */
