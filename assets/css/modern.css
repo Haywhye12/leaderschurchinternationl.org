@@ -1862,14 +1862,67 @@ img { max-width: 100%; height: auto; display: block; }
 /* Count-up number display */
 .count-up { display: inline-block; }
 
-/* Section heading underline draw-in */
+/* Section heading gradient draw-in on scroll — light backgrounds only */
 .lci-section-header.in-view .lci-section-title {
   background: linear-gradient(135deg, var(--color-gray-900), var(--color-primary));
-  -webkit-background-clip: text; background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* fallback */
 }
 [data-theme="dark"] .lci-section-header.in-view .lci-section-title {
   background: linear-gradient(135deg, var(--color-gray-100), var(--color-primary-light));
-  -webkit-background-clip: text; background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/*
+ * Cancel the gradient clip on any section with a dark / colored background.
+ * These headings must stay white — gradient text on a dark bg renders invisible.
+ */
+.lci-section-dark .lci-section-header.in-view .lci-section-title,
+.audio-section-bg .lci-section-header.in-view .lci-section-title,
+.lci-cta-strip .lci-section-header.in-view .lci-section-title,
+.giving-section .lci-section-header.in-view .lci-section-title,
+.prayer-cta .lci-section-header.in-view .lci-section-title,
+.lci-section[style*="background"] .lci-section-header.in-view .lci-section-title,
+.lci-section-header.in-view .lci-section-title[style*="color: var(--color-white)"],
+.lci-section-header.in-view .lci-section-title[style*="color:white"],
+.lci-section-header.in-view .lci-section-title[style*="color: white"] {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Also ensure dark section titles stay white even before in-view triggers */
+.lci-section-dark .lci-section-title,
+.audio-section-bg .lci-section-title,
+.lci-cta-strip .lci-section-title,
+.giving-section .lci-section-title,
+/* inline-background dark sections (media audio panel, contact giving) */
+.lci-section[style*="background"] .lci-section-title {
+  color: var(--color-white) !important;
+  -webkit-text-fill-color: var(--color-white) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+}
+
+/* giving-section plain h2 (index.html) — not .lci-section-title class */
+.giving-section h2,
+.giving-text h2 {
+  color: var(--color-white) !important;
+  -webkit-text-fill-color: var(--color-white) !important;
+}
+
+/* prayer-cta h2 (pastors.html) */
+.prayer-cta h2 {
+  color: var(--color-white) !important;
+  -webkit-text-fill-color: var(--color-white) !important;
 }
 
 /* ── Responsive ──────────────────────────────────────────────── */
